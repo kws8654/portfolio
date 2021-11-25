@@ -1,0 +1,27 @@
+.dockBar {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 80px;
+  background: gray;
+  opacity: 80%;
+  border-radius: 20px;
+}
+
+.dockContent {
+  position: absolute;
+  width: 900px;
+  height: 80px;
+  text-align: center;
+  padding: auto;
+  bottom: 23px;
+  left: 150px;
+}
+
+.dockImage {
+  width: 65px;
+  margin-left: 15px;
+  margin-top: 4px;
+}

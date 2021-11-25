@@ -1,0 +1,558 @@
+.frame {
+  width: 1200px;
+  height: 755px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page {
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  width: 100%;
+  height: 96.5%;
+  border-radius: 8px;
+}
+
+@keyframes spinning {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.turntable {
+  background: #ccc;
+  background: linear-gradient(
+    180deg,
+    #cccccc 12.1202882483%,
+    #cbcbcb 12.1202882483%,
+    #828282 88.949556541%
+  );
+  display: inline-block;
+  width: 390px;
+  height: 350px;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  border-radius: 8px;
+}
+
+.turntable.active .record {
+  animation: spinning 2s linear infinite;
+  transition: all 0.5s ease;
+}
+
+.turntable.active .tonearm {
+  transform: rotate(35deg);
+  transition: all 0.5s ease;
+}
+.turntable.active .tonearm .tonearmBase {
+  z-index: -2;
+}
+.turntable .tonearmBase {
+  width: 110px;
+  height: 110px;
+  background: #111111;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 10px;
+  left: auto;
+  right: 25px;
+  top: 15px;
+  display: block;
+  z-index: -1;
+  box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 0 4px rgba(0, 0, 0, 0.5),
+    0 -1px 0px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.8);
+}
+.turntable .tonearmBase:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #777;
+  background: radial-gradient(ellipse at center, #cccccc 0%, #666666 100%);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -25px;
+  box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.4),
+    inset 0 2px 2px rgba(255, 255, 255, 0.4);
+}
+.turntable .tonearmBase:before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  left: 4px;
+  top: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+.turntable .tonearm {
+  position: absolute;
+  right: 75px;
+  top: 80px;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
+.turntable .tonearm .tonearmArm {
+  width: 10px;
+  height: 200px;
+  display: block;
+  background: linear-gradient(
+    89.8978078738deg,
+    #d9d9d9 4.2126259798%,
+    #f2f2f2 36.5859462486%,
+    #d0d0d0 51.4972937663%,
+    #6b6b6b 98.3895576708%
+  );
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+
+  transition: all 0.5s ease;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.turntable .tonearm .tonearmArm:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 18px;
+  height: 40px;
+
+  background: #fff;
+  top: -20px;
+  left: -4px;
+  background: linear-gradient(to right, #222222 0%, #555555 35%, #111111 100%);
+  border-radius: 2px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.turntable .tonearm .tonearmArm .stylus {
+  width: 20px;
+  height: 35px;
+  background: #222;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  margin-left: -5px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.turntable .tonearm .tonearmArm .stylus:after {
+  border-top: 2px solid #222;
+  width: 30px;
+  display: block;
+  content: "";
+  height: 1px;
+  background: #666;
+}
+.turntable .tonearm .tonearmArm .stylus:before {
+  width: 6px;
+  display: block;
+  content: "";
+  height: 6px;
+  background: #111;
+  position: absolute;
+  left: 7px;
+  top: 20px;
+
+  border-radius: 50%;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+.turntable .platter {
+  height: 270px;
+  width: 270px;
+  display: block;
+  background: #666;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: #111;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.45);
+}
+
+.turntable .record {
+  height: 240px;
+  width: 240px;
+  display: block;
+  background: #ccc;
+  background: linear-gradient(
+    180deg,
+    #d9d9d9 1.9894561598%,
+    #d7d7d7 1.9894561598%,
+    #a8a8a8 16.5355623381%,
+    #f2f2f2 30.5149371069%,
+    #999999 43.5497595265%,
+    #acacac 47.5168793933%,
+    #f2f2f2 63.7631798002%,
+    #6b6b6b 92.666481687%
+  );
+  border-radius: 50%;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+}
+.turntable .record:before {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  left: 5px;
+  top: 5px;
+  content: "";
+  border-radius: 50%;
+  background: #111;
+  display: block;
+}
+.turntable .record .label {
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  left: 90px;
+  top: 90px;
+  margin: 0;
+  padding: 0;
+}
+.turntable .record .label:after {
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+  width: 40px;
+  height: 20px;
+  background: none;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  content: "";
+  display: inline-block;
+  margin-top: 6px;
+  border-bottom: none;
+}
+.turntable .record .label .nub {
+  height: 12px;
+  width: 12px;
+  background: #111;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -6px;
+  margin-top: -6px;
+  position: absolute;
+}
+.turntable .record .label .marker {
+  background: #ccc;
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  left: 93%;
+  top: 50%;
+  margin-top: -5px;
+}
+.turntable .startstop {
+  background: #999;
+  background: linear-gradient(
+    180deg,
+    #b4b4b4 12.1202882483%,
+    #969696 88.949556541%
+  );
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0px rgba(255, 255, 255, 0.5), 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #555;
+}
+.turntable .startstop:after {
+  content: "START";
+  font-size: 8px;
+  font-family: sans-serif;
+  color: #444;
+  line-height: 30px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.turntable .startstop.active:after {
+  content: "STOP";
+}
+.turntable .speed1 {
+  width: 20px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 56px;
+  background: #999;
+  box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0px rgba(255, 255, 255, 0.5), 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #555;
+}
+.turntable .speed1:after {
+  position: relative;
+  background: green;
+  height: 3px;
+  width: 4px;
+  display: block;
+  left: 2px;
+  top: 2px;
+  content: "";
+}
+.turntable .speed2 {
+  width: 20px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 76px;
+  background: #999;
+  box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0px rgba(255, 255, 255, 0.5), 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #555;
+}
+.turntable .speed2:after {
+  position: relative;
+  background: #666;
+  height: 3px;
+  width: 4px;
+  display: block;
+  left: 2px;
+  top: 2px;
+  content: "";
+}
+.turntable .adapter {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    180deg,
+    #f2f2f2 1.9894561598%,
+    #f0f0f0 1.9894561598%,
+    #999999 31.2705789863%,
+    #cacaca 47.5168793933%,
+    #f2f2f2 61.3073436922%,
+    #999999 92.666481687%
+  );
+  left: 10px;
+  top: 10px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0px rgba(255, 255, 255, 0.2), 0 0 4px rgba(0, 0, 0, 0.5),
+    0 -2px 0px rgba(0, 0, 0, 0.3), 0 2px 0px rgba(255, 255, 255, 0.8);
+}
+.turntable .adapter:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #222;
+  display: block;
+  margin: 14px auto 0 auto;
+  box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.35),
+    inset 0 -2px 0px rgba(255, 255, 255, 0.4);
+}
+.turntable .toggler {
+  position: absolute;
+  height: 18px;
+  width: 34px;
+  right: 150px;
+  bottom: 10px;
+  border-radius: 8px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.turntable .toggler:before {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  display: block;
+  background: #999;
+  left: 2px;
+  top: 3px;
+  box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.turntable .toggler:after {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  display: block;
+  background: #777;
+  right: 2px;
+  top: 3px;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.turntable .onoff {
+  position: absolute;
+  background: #111;
+  height: 26px;
+  width: 26px;
+  left: 10px;
+  bottom: 48px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.4);
+}
+.turntable .onoff:after {
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+  width: 16px;
+  height: 8px;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  content: "";
+  display: inline-block;
+  margin-top: 2px;
+  border-bottom: none;
+}
+
+.turntable .bpm {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 140px;
+  width: 30px;
+  right: 20px;
+  bottom: 60px;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -1px rgba(255, 255, 255, 0.4);
+}
+.turntable .bpm:after {
+  content: "";
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 1px;
+  left: 9px;
+  bottom: 1px;
+  display: block;
+}
+.turntable .bpm:before {
+  content: "";
+  height: 87%;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  bottom: 1px;
+  display: block;
+  width: 7px;
+  background: repeating-linear-gradient(
+    to top,
+    #666,
+    transparent 2px,
+    transparent 2px,
+    transparent 5px
+  );
+}
+.turntable .bpm .knob {
+  position: relative;
+  height: 14px;
+  width: 20px;
+  top: 50%;
+  left: 10px;
+  margin-top: -5px;
+  display: block;
+  background: #fff;
+  background: linear-gradient(180deg, #f2f2f2, 20%, #969696 80%);
+  box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.turntable .bpm .knob:after {
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  width: 20px;
+  border-top: 2px solid #888;
+  content: "";
+}
+.turntable .bpm .knob:before {
+  content: "";
+  position: relative;
+  left: 9px;
+  height: 120px;
+  border-left: 2px solid #222;
+  z-index: -1;
+  display: block;
+  top: -55px;
+}
+
+.console {
+  position: absolute;
+  width: 390px;
+  height: 50px;
+  top: 400px;
+  line-height: 50px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.rec {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  width: 280px;
+  z-index: 1;
+  animation: rotate 0.5s linear infinite;
+  transform-origin: center;
+}
+
+.turntable.active .rec {
+  animation: spinning 2s linear infinite;
+  transition: all 0.5s ease;
+}
+
+.buttons {
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+}
+
+.nextLp {
+  color: #444;
+  background: linear-gradient(
+    180deg,
+    #b4b4b4 12.1202882483%,
+    #969696 88.949556541%
+  );
+  height: 30px;
+  width: 40px;
+  margin-left: 10px;
+}

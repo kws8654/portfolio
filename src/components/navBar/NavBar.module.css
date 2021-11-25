@@ -1,0 +1,39 @@
+.navBar {
+  background: linear-gradient(to bottom, gray, white);
+  padding: 2.5px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.navBarIcon {
+  width: 26px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.navBarSystemIcon {
+  width: 18px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.navBarText {
+  margin: 6px;
+}
+
+.option {
+  display: inline-block;
+}
+
+.system {
+  display: inline-block;
+  float: right;
+}
+
+.system > span {
+  margin: 5px;
+}
+
+.clock {
+  padding-right: 8px;
+}
