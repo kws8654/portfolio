@@ -1,7 +1,27 @@
 import React, { useRef, useEffect } from 'react'
 import styles from './Home.module.css'
+import { useHistory } from 'react-router-dom'
+
 
 function Home() {
+
+    let history = useHistory();
+
+    function pushPF1() {
+        history.push('/portfolio1');
+    }
+
+    function pushPF2() {
+        history.push("/portfolio2");
+    }
+
+    function pushPF3() {
+        history.push("/portfolio3");
+    }
+
+    function pushPF4() {
+        history.push("/portfolio4");
+    }
 
     const container = useRef();
     const box = useRef();
@@ -77,33 +97,25 @@ function Home() {
     return (
         <div className={styles.home} ref={container}>
             <figure>
-                <a href="http://kws8654.dothome.co.kr/portfolio/turntable/">
-                    <img src="./image/chrome.png" className={styles.file} alt='' />
-                </a>
+                <img src="./image/chrome.png" className={styles.file} alt='' onClick={pushPF1} />
                 <figcaption style={{ marginLeft: '19px', color: 'white' }}>
                     portfolio 1
                 </figcaption>
             </figure>
             <figure>
-                <a href="http://kws8654.dothome.co.kr/portfolio/oldversion/">
-                    <img src="./image/eclipse.png" className={styles.file} alt='' />
-                </a>
+                <img src="./image/eclipse.png" className={styles.file} alt='' onClick={pushPF2} />
                 <figcaption style={{ marginLeft: '19px', color: 'white' }}>
                     portfolio 2
                 </figcaption>
             </figure>
             <figure>
-                <a href="http://kws8654.dothome.co.kr/portfolio/">
-                    <img src="./image/safari.png" className={styles.file} alt='' />
-                </a>
+                <img src="./image/safari.png" className={styles.file} alt='' onClick={pushPF3} />
                 <figcaption style={{ marginLeft: '19px', color: 'white' }}>
                     portfolio 3
                 </figcaption>
             </figure >
             <figure>
-                <a href="http://kws8654.dothome.co.kr/portfolio/">
-                    <img src="./image/vsc.png" className={styles.file} alt='' />
-                </a>
+                <img src="./image/vsc.png" className={styles.file} alt='' onClick={pushPF4} />
                 <figcaption style={{ marginLeft: '19px', color: 'white' }}>
                     portfolio 4
                 </figcaption>

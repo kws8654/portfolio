@@ -118,7 +118,7 @@ function TurnTable() {
                     className={styles.audioPlay}
                     src={`/audio/aud${index}.mp3`}
                     type="audio/mp3"
-                    onLoadStart={"this.volume =  0.1"}
+                    // onLoadStart='this.volume =  0.1'
                     loop
                 />
             </div>
