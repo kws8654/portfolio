@@ -6,15 +6,15 @@ import styles from './TurnTable.module.css'
 
 function TurnTable() {
 
-    $(".startstop").click(function () {
-        $(this).toggleClass("active");
-        $('.turntable').toggleClass("active");
-    });
+    // $(".startstop").click(function () {
+    //     $(this).toggleClass("active");
+    //     $('.turntable').toggleClass("active");
+    // });
 
-    $(".startstop").click(function () {
-        $(this).toggleClass("active");
-        $('.rec').toggleClass("active");
-    });
+    // $(".startstop").click(function () {
+    //     $(this).toggleClass("active");
+    //     $('.rec').toggleClass("active");
+    // });
 
 
     const [index, setIndex] = useState(1);
