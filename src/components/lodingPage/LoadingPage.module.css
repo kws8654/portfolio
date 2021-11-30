@@ -1,0 +1,97 @@
+.motherFrame {
+  width: 1200px;
+  height: 755px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  border: 1px solid rgb(80, 80, 80);
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loadingFrame {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 8px;
+  border-radius: 15px;
+  background: #000;
+  border: 1px solid gray;
+}
+
+.loginFrame {
+  position: absolute;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px gray;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: appear 2s ease-out forwards;
+}
+
+.login > div {
+  margin: 15px;
+}
+
+.loadingBar {
+  width: 100%;
+  height: 6px;
+  margin-top: 1px;
+  border-radius: 15px;
+  background: white;
+  position: absolute;
+  box-shadow: 0px 0px 10px 1px white;
+  animation: nameThis 5s ease-out;
+}
+
+.logo {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+}
+
+.login {
+}
+
+.password {
+  border-radius: 14px;
+  width: 180px;
+  height: 20px;
+}
+
+.porfileImg {
+  width: 180px;
+}
+
+@keyframes nameThis {
+  0% {
+    width: 0px;
+  }
+
+  60% {
+    width: 40%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

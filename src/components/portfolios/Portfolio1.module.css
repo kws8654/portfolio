@@ -1,0 +1,49 @@
+.frame {
+  height: 97%;
+  display: flex;
+}
+.imageFrame {
+  color: red;
+  width: 60%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.descPage {
+  display: flex;
+  flex-direction: column;
+  align-content: fle;
+  text-align: center;
+  width: 40%;
+  height: 95%;
+}
+.title {
+  margin-top: 90px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.detail {
+  margin-top: 70px;
+}
+
+.description {
+  color: red;
+  width: 90%;
+  height: 80%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  color: red;
+  width: 90%;
+  height: 20%;
+}
+
+.links > a > img {
+  width: 120px;
+  height: 120px;
+}
