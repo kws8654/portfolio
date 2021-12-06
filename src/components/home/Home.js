@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { useHistory } from 'react-router-dom';
 
 function Home() {
+  const [isClicked, setIsClicked] = useState(false);
   let history = useHistory();
 
   function pushPF1() {
@@ -106,13 +107,16 @@ function Home() {
     });
   }, [box, box2, container]);
 
-  const hideAlret = () => {};
+  const hideAlret = () => {
+    setIsClicked(true);
+  };
 
   return (
     <div className={styles.home} ref={container}>
       <figure>
         <img
-          src='./image/chrome.png'
+          // src='./image/chrome.png'
+          src='./image/generic.png'
           className={styles.file}
           alt=''
           onClick={pushPF1}
@@ -121,7 +125,8 @@ function Home() {
       </figure>
       <figure>
         <img
-          src='./image/eclipse.png'
+          // src='./image/eclipse.png'
+          src='./image/generic.png'
           className={styles.file}
           alt=''
           onClick={pushPF2}
@@ -131,7 +136,8 @@ function Home() {
 
       <figure>
         <img
-          src='./image/safari.png'
+          // src='./image/safari.png'
+          src='./image/generic.png'
           className={styles.file}
           alt=''
           onClick={pushPF3}
@@ -140,7 +146,8 @@ function Home() {
       </figure>
       <figure>
         <img
-          src='./image/vsc.png'
+          // src='./image/vsc.png'
+          src='./image/generic.png'
           className={styles.file}
           alt=''
           onClick={pushPF4}
@@ -218,11 +225,18 @@ function Home() {
           />
         </div>
       </div>
-      <div className={styles.alret}>
+      <div className={styles.alret} style={{ display: isClicked && 'none' }}>
+        <p style={{ fontWeight: 'bold' }}>알림</p>
+        <p>NICE TO MEET YOU STRANGER :)</p>
+        <p className={styles.xButton} onClick={hideAlret}>
+          x
+        </p>
+      </div>
+      <div className={styles.alret2}>
         <p style={{ fontWeight: 'bold' }}>중요 알림</p>
         <p>
-          You can drag and move{' '}
-          <span style={{ color: 'tomato' }}>'SOMETHING'</span>
+          You can <span style={{ color: 'red' }}>drag</span> and
+          <span style={{ color: 'red' }}> move</span> SOMETHING
         </p>
         <p className={styles.xButton}>x</p>
       </div>

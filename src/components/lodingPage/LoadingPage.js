@@ -24,6 +24,9 @@ const LoadingPage = () => {
         <div className={styles.loadingFrame}>
           <img className={styles.logo} src='./image/apple.png' alt='' />
           <div className={styles.loadingBar}></div>
+          <p>
+            Sorry! It's not a Responsive Web Design. <br />
+          </p>
         </div>
       ) : (
         <>
@@ -43,7 +46,9 @@ const LoadingPage = () => {
                   placeholder='  암호 입력'
                 />
               </form>
-              <div style={{ fontSize: '14px' }}>TYPE ANY LETTERS</div>
+              <div style={{ fontSize: '13px', color: 'gray', margin: '5px' }}>
+                TYPE ANY LETTERS
+              </div>
             </div>
           </div>
         </>

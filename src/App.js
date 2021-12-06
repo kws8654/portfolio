@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import LoadingPage from './components/lodingPage/LoadingPage';
 import Mac from './components/mac/Mac';
 import Portfolio1 from './components/portfolios/Portfolio1';
-import TurnTable from './components/turnTable/TurnTable';
 
 function App() {
   return (
@@ -19,13 +18,13 @@ function App() {
           <Portfolio1 />
         </Route>
         <Route path='/portfolio2'>
-          <TurnTable />
+          <Portfolio1 />
         </Route>
         <Route path='/portfolio3'>
-          <TurnTable />
+          <Portfolio1 />
         </Route>
         <Route path='/portfolio4'>
-          <TurnTable />
+          <Portfolio1 />
         </Route>
       </Switch>
     </Router>

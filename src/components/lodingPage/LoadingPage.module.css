@@ -22,13 +22,19 @@
   border-radius: 15px;
   background: #000;
   border: 1px solid gray;
+  text-align: center;
+}
+
+.loadingFrame > p {
+  margin-top: 25px;
+  color: gray;
 }
 
 .loginFrame {
   position: absolute;
+  color: white;
   font-size: 20px;
   text-shadow: 1px 1px 2px gray;
-  color: white;
   text-align: center;
   top: 50%;
   left: 50%;
@@ -57,9 +63,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100px;
-}
-
-.login {
 }
 
 .password {

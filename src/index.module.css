@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Neo SD';
-  src: url('./fonts/AppleSDGothicNeo.ttc') format('truetype');
+  src: url('./fonts/NotoSansKR-Regular.otf') format('truetype');
 }
 
 body {

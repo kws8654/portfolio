@@ -6,7 +6,7 @@
   width: 900px;
   height: 80px;
   background: gray;
-  opacity: 80%;
+  opacity: 0.8;
   border-radius: 20px;
 }
 
@@ -17,11 +17,16 @@
   text-align: center;
   padding: auto;
   bottom: 23px;
-  left: 150px;
+  left: 140px;
 }
 
 .dockImage {
   width: 65px;
   margin-left: 15px;
-  margin-top: 4px;
+  margin-top: 6px;
+}
+
+.dockImage:hover {
+  transform: scale(1.2);
+  transition: ease 0.3s;
 }

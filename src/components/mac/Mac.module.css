@@ -12,6 +12,15 @@
   animation: macAppear 2s ease-out forwards;
 }
 
+.background {
+  position: absolute;
+  width: 1200px;
+  height: 755px;
+  top: 0;
+  z-index: -1;
+  border-radius: 8px;
+}
+
 @keyframes macAppear {
   from {
     opacity: 0;
