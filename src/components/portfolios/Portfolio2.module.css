@@ -1,0 +1,80 @@
+.frame {
+  height: 96.5%;
+  display: flex;
+  color: white;
+}
+.imageFrame {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image {
+  width: 55%;
+  padding: 20px;
+  border: dotted 4px white;
+  border-radius: 10px;
+}
+
+.descPage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+.title {
+  margin-top: 90px;
+  font-size: 30px;
+  font-weight: bold;
+  /* text-decoration: underline; */
+  background-color: gray;
+  color: white;
+  height: 5%;
+}
+
+.title p {
+  font-size: 15px;
+}
+
+.subTitle {
+  border-bottom: 1px solid white;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.detail {
+  margin-top: 100px;
+  text-align: justify;
+}
+
+.subDetail {
+  margin-bottom: 40px;
+}
+
+.description {
+  width: 90%;
+  height: 80%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  color: red;
+  width: 100%;
+  height: 20%;
+}
+
+.links > a > img {
+  width: 80px;
+  height: 80px;
+}
+
+.links > a > img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}

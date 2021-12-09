@@ -1,9 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, lazy, Suspense } from 'react';
 import styles from './Home.module.css';
 import { useHistory } from 'react-router-dom';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
+const FaceTimeVideo = lazy(() => import('./FaceTimeVideo'));
 function Home() {
   const [isClicked, setIsClicked] = useState(false);
+  const [isClicked2, setIsClicked2] = useState(false);
+
   let history = useHistory();
 
   function pushPF1() {
@@ -107,16 +111,12 @@ function Home() {
     });
   }, [box, box2, container]);
 
-  const hideAlret = () => {
-    setIsClicked(true);
-  };
-
   return (
     <div className={styles.home} ref={container}>
       <figure>
         <img
           // src='./image/chrome.png'
-          src='./image/generic.png'
+          src='./image/pf1.png'
           className={styles.file}
           alt=''
           onClick={pushPF1}
@@ -126,7 +126,7 @@ function Home() {
       <figure>
         <img
           // src='./image/eclipse.png'
-          src='./image/generic.png'
+          src='./image/pf2.png'
           className={styles.file}
           alt=''
           onClick={pushPF2}
@@ -137,7 +137,7 @@ function Home() {
       <figure>
         <img
           // src='./image/safari.png'
-          src='./image/generic.png'
+          src='./image/pf3.png'
           className={styles.file}
           alt=''
           onClick={pushPF3}
@@ -147,7 +147,7 @@ function Home() {
       <figure>
         <img
           // src='./image/vsc.png'
-          src='./image/generic.png'
+          src='./image/pf4.png'
           className={styles.file}
           alt=''
           onClick={pushPF4}
@@ -176,17 +176,20 @@ function Home() {
           <strong style={{ fontSize: '20px' }}> Wonsub Kim, 김원섭 </strong>
           <br />
           <br />
-          📞 010-6225-**** <br />
-          📧 raykim.dev@gmail.com
+          📞 010-6225-8*** <br />
+          📧
+          <a href='mailto: raykim.dev@gmail.com?subject=We want to contact with you, RAY!'>
+            raykim.dev@gmail.com
+          </a>
           <p>
             Han-yang University _ Architecture (13.03 - 13.07)
             <br />
-            Sang-myung University _ Stage Design (15.03 - 21.02)
+            Sang-myung University _ Scenography (15.03 - 21.02)
           </p>
           <p>
             ✔️ Java <br />
-            ✔️ Java Script <br />
-            ✔️ React.js <br />
+            ✔️ JavaScript, jQuery <br />
+            ✔️ React.js, Redux, TypeScript <br />
             ✔️ Oracle, MongoDB, Firebase <br />
           </p>
           <p>
@@ -214,31 +217,40 @@ function Home() {
           </strong>
         </div>
         <div>
-          <video
-            src='./image/facetime.mp4'
-            width='300px'
-            heigth='200px'
-            autoPlay
-            muted
-            loop
-            style={{ position: 'absolute', right: '50px' }}
-          />
+          <Suspense fallback={LoadingSpinner}>
+            <FaceTimeVideo />
+          </Suspense>
         </div>
       </div>
       <div className={styles.alret} style={{ display: isClicked && 'none' }}>
         <p style={{ fontWeight: 'bold' }}>알림</p>
         <p>NICE TO MEET YOU STRANGER :)</p>
-        <p className={styles.xButton} onClick={hideAlret}>
+        <p
+          className={styles.xButton}
+          onClick={() => {
+            setIsClicked(true);
+          }}
+        >
           x
         </p>
       </div>
-      <div className={styles.alret2}>
+      <div
+        className={styles.alret2}
+        style={{ display: isClicked2 && 'none', top: isClicked && '50px' }}
+      >
         <p style={{ fontWeight: 'bold' }}>중요 알림</p>
         <p>
           You can <span style={{ color: 'red' }}>drag</span> and
           <span style={{ color: 'red' }}> move</span> SOMETHING
         </p>
-        <p className={styles.xButton}>x</p>
+        <p
+          className={styles.xButton}
+          onClick={() => {
+            setIsClicked2(true);
+          }}
+        >
+          x
+        </p>
       </div>
     </div>
   );
