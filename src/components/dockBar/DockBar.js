@@ -6,13 +6,6 @@ function DockBar() {
     <>
       <div className={styles.dockBar} />
       <div className={styles.dockContent}>
-        {/* <img src="./image/folder1.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder2.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder3.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder4.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder5.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder6.png" className={styles.dockImage} alt="" />
-                <img src="./image/folder7.png" className={styles.dockImage} alt="" /> */}
         <img src='./image/chrome.png' className={styles.dockImage} alt='' />
         <img src='./image/discord.png' className={styles.dockImage} alt='' />
         <img src='./image/eclipse.png' className={styles.dockImage} alt='' />
@@ -24,7 +17,7 @@ function DockBar() {
           <img
             src='./image/notion.png'
             className={styles.dockImage}
-            style={{ width: '55px', marginLeft: '60px', marginBottom: '5px' }}
+            style={{ width: '54px', marginLeft: '60px', marginBottom: '5px' }}
             alt=''
           />
         </a>
@@ -32,7 +25,7 @@ function DockBar() {
           <img
             src='./image/velog.png'
             className={styles.dockImage}
-            style={{ width: '55px', marginBottom: '5px' }}
+            style={{ width: '50px', marginBottom: '8px' }}
             alt=''
           />
         </a>
@@ -40,7 +33,7 @@ function DockBar() {
           <img
             src='./image/git.png'
             className={styles.dockImage}
-            style={{ width: '55px', marginBottom: '5px' }}
+            style={{ width: '53px', marginBottom: '5px' }}
             alt=''
           />
         </a>

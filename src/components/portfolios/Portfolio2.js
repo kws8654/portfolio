@@ -15,31 +15,33 @@ const Portfolio2 = () => {
           <div className={styles.descPage}>
             <div className={styles.description}>
               <div className={styles.title}>
-                <h1>'Pizza House'</h1>
+                <h1>'PIZZA HOUSE'</h1>
                 <p> [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE ]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>SUMMARY</span>
                   <p>
-                    음식 배달 주문 반응형 어플리케이션입니다. 메뉴 리스트와
-                    고객주문내역을 Firebase의 Realtime database와 연동하여 저장
-                    및 송출됩니다.
+                    배달음식 주문 기능의 반응형 어플리케이션입니다. 메뉴
+                    리스트와 고객주문내역을 Firebase의 Realtime database와
+                    연동하여 Fetch - Post합니다. useState, useEffect외에도
+                    portal, context, reducer, ref등 다양한 hook을 활용했습니다.
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>WHAT I LEARNED </span>
                   <p>
-                    - Portal을 이용한 모달 처리 Context, Reducer의 학습 및 활용
-                    <br />- UI 컴포넌트(Card, Input, Modal)로 react의 장점인
-                    재사용성
+                    - Portal을 이용한 모달 처리 <br />
+                    - React hook의 Context, Reducer의 적용 <br />- UI
+                    컴포넌트(Card, Input, Modal)를 활용해 react의 장점인
+                    재사용성 극대화
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}> SELF REVIEW </span>
                   <p>
-                    - 리뷰 보드 추가 <br /> - Cloudinary를 이용하여 메뉴 사진,
-                    리뷰 사진 연동 추가
+                    - 리뷰 보드 추가 <br /> - Cloudinary를 이용한 메뉴 사진,
+                    리뷰 사진 연동 <br /> - Reducer에서 Redux로 전환
                   </p>
                 </div>
               </div>

@@ -4,20 +4,24 @@ import styles from './LoadingSpinner.module.css';
 
 const LoadingSpinner = () => {
   return (
-    <div className={styles.ldSpinner}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <MiddlePage>
+      <div className={styles.frame}>
+        <div className={styles.ldSpinner}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </MiddlePage>
   );
 };
 

@@ -15,7 +15,7 @@ const Portfolio4 = () => {
           <div className={styles.descPage}>
             <div className={styles.description}>
               <div className={styles.title}>
-                <h1>'Portfolio'</h1>
+                <h1>'PORTFOLIO'</h1>
                 <p>
                   {' '}
                   [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE | CLOUDINARY ]
