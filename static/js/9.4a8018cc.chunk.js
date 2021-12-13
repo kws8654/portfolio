@@ -1,2 +1,0 @@
-(this.webpackJsonpmacfolio=this.webpackJsonpmacfolio||[]).push([[9],{51:function(t,i,o){"use strict";o.r(i);o(1);var e=o(0);i.default=function(){return Object(e.jsx)("video",{src:"./image/facetime.mp4",width:"300px",heigth:"200px",autoPlay:!0,muted:!0,loop:!0,style:{position:"absolute",right:"50px"}})}}}]);
-//# sourceMappingURL=9.4a8018cc.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonpmacfolio=this.webpackJsonpmacfolio||[]).push([[12],{47:function(a,o,s){"use strict";s.r(o);s(1);var c=s(0);o.default=function(a){var o=a.className;return Object(c.jsx)("video",{className:o,src:"./image/PF2.mov",alt:"",autoPlay:!0,loop:!0})}}}]);
+//# sourceMappingURL=12.7ca84791.chunk.js.map
