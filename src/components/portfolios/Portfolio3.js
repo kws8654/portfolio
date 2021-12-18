@@ -41,7 +41,7 @@ const Portfolio3 = () => {
                     <br />- 한글로 지명 검색할 수 있도록 변경
                     <br />
                     <span style={{ textDecoration: 'line-through' }}>
-                      - 온도와 날씨에 따라 변하는 CSS 추가{' '}
+                      - 온도와 날씨에 따라 변하는 CSS 추가
                     </span>
                   </p>
                 </div>

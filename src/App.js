@@ -10,6 +10,8 @@ const Portfolio1 = lazy(() => import('./components/portfolios/Portfolio1'));
 const Portfolio2 = lazy(() => import('./components/portfolios/Portfolio2'));
 const Portfolio3 = lazy(() => import('./components/portfolios/Portfolio3'));
 const Portfolio4 = lazy(() => import('./components/portfolios/Portfolio4'));
+const Portfolio5 = lazy(() => import('./components/portfolios/Portfolio5'));
+const Portfolio6 = lazy(() => import('./components/portfolios/Portfolio6'));
 
 function App() {
   return (
@@ -33,6 +35,12 @@ function App() {
           </Route>
           <Route path='/portfolio4'>
             <Portfolio4 />
+          </Route>
+          <Route path='/portfolio5'>
+            <Portfolio5 />
+          </Route>
+          <Route path='/portfolio6'>
+            <Portfolio6 />
           </Route>
         </Switch>
       </Suspense>

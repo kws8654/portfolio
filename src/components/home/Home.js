@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import LoadingSpinner from '../UI/LoadingSpinner';
 
 const FaceTimeVideo = lazy(() => import('./FaceTimeVideo'));
-function Home() {
+function Home({ isClickedMusic, isClickedKakao }) {
   const [isClicked, setIsClicked] = useState(false);
   const [isClicked2, setIsClicked2] = useState(false);
 
@@ -24,6 +24,14 @@ function Home() {
 
   function pushPF4() {
     history.push('/portfolio4');
+  }
+
+  function pushPF5() {
+    history.push('/portfolio5');
+  }
+
+  function pushPF6() {
+    history.push('/portfolio6');
   }
 
   const container = useRef();
@@ -115,7 +123,6 @@ function Home() {
     <div className={styles.home} ref={container}>
       <figure>
         <img
-          // src='./image/chrome.png'
           src='./image/pf1.png'
           className={styles.file}
           alt=''
@@ -125,7 +132,6 @@ function Home() {
       </figure>
       <figure>
         <img
-          // src='./image/eclipse.png'
           src='./image/pf2.png'
           className={styles.file}
           alt=''
@@ -136,7 +142,6 @@ function Home() {
 
       <figure>
         <img
-          // src='./image/safari.png'
           src='./image/pf3.png'
           className={styles.file}
           alt=''
@@ -146,7 +151,6 @@ function Home() {
       </figure>
       <figure>
         <img
-          // src='./image/vsc.png'
           src='./image/pf4.png'
           className={styles.file}
           alt=''
@@ -154,6 +158,26 @@ function Home() {
         />
         <figcaption>portfolio 4</figcaption>
       </figure>
+      <div className={styles.file2ndLine}>
+        <figure>
+          <img
+            src='./image/pf5.png'
+            className={styles.file2nd}
+            alt=''
+            onClick={pushPF5}
+          />
+          <figcaption>portfolio 5</figcaption>
+        </figure>
+        <figure>
+          <img
+            src='./image/pf6.png'
+            className={styles.file2nd}
+            alt=''
+            onClick={pushPF6}
+          />
+          <figcaption>portfolio 6</figcaption>
+        </figure>
+      </div>
       <div className={styles.memo} ref={box}>
         <div className={styles.memoTitle}>
           <button className={styles.red}></button>
@@ -251,6 +275,19 @@ function Home() {
         >
           x
         </p>
+      </div>
+      <div
+        className={styles.music}
+        style={{ display: isClickedMusic ? 'block' : 'none' }}
+      >
+        <audio src='./image/audio.mp3' type='audio/mp3' controls loop />
+      </div>
+      <div
+        className={styles.kakaoFrame}
+        style={{ display: isClickedKakao ? 'block' : 'none' }}
+      >
+        <div className={styles.kakaoPop} />
+        <img className={styles.kakaoQR} src='./image/kakaoQR.jpg' alt='' />
       </div>
     </div>
   );

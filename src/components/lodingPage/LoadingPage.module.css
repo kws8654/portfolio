@@ -12,6 +12,75 @@
   transform: translate(-50%, -50%);
 }
 
+.mainText {
+  position: absolute;
+  color: white;
+  width: 1500px;
+  height: 200px;
+  line-height: 180px;
+  text-align: center;
+  font-size: 250px;
+  text-decoration: underline dotted;
+  text-underline-position: under;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: textOpacity infinite 5s;
+}
+
+@keyframes textOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.onButton {
+  position: absolute;
+  width: 10vh;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.onButton:hover {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
+  filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
+}
+
+.macBook {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  transform-origin: bottom;
+  width: 1450px;
+}
+
+.macBar {
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1500px;
+  height: 50px;
+}
+
+.macRotate {
+  animation: rotate 3s forwards;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotateX(0deg);
+  }
+}
+
 .loadingFrame {
   position: absolute;
   top: 58%;

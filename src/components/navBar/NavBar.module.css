@@ -5,6 +5,11 @@
   border-top-left-radius: 8px;
 }
 
+.navBar img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .navBarIcon {
   width: 26px;
   height: 18px;

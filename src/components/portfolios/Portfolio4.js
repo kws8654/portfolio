@@ -17,7 +17,6 @@ const Portfolio4 = () => {
               <div className={styles.title}>
                 <h1>'PORTFOLIO'</h1>
                 <p>
-                  {' '}
                   [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE | CLOUDINARY ]
                 </p>
               </div>
@@ -25,27 +24,24 @@ const Portfolio4 = () => {
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>SUMMARY</span>
                   <p>
-                    사용자가 재생, 정지, 곡 이동을 할 수 있는 오디오
-                    컨트롤러입니다. 턴 테이블과 LP를 컨셉으로 톤암의 움직임,
-                    lp의 회전 애니메이션을 추가하여 각 액션을 시각적으로
-                    보이도록 했습니다. lp판을 제외한 모든 컴포넌트를 css로
-                    구현했습니다.
+                    저의 개인 포트폴리오 웹 사이트입니다. React로 작업했으며
+                    실제 랩탑에서 동작하는 모션, 애니메이션, 상호작용을
+                    JavaScript와 CSS로 구현했습니다.
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>WHAT I LEARNED </span>
                   <p>
-                    CSS의 전반적인 부분을 공부할 수 있었으며 특히 before-after,
-                    z-index, animation, keyframes를 깊이 있게 공부했습니다.
-                    Jqeury와 Java script의 qeurySelector, attribute 속성을
-                    자유롭게 다룰 수 있다
+                    - React의 작업, 배포까지의 전반적인 부분 (특히 router, lazy
+                    loading, useMemo, useCallback의 사용법과 적용) <br />
+                    - React 배포에서 생기는 오류와 해결 <br />
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}> SELF REVIEW </span>
                   <p>
-                    음악파일과 노래 제목을 변경하는 기능에 있어 더 소프트 코딩의
-                    여지가 있다. BPM 조절, Volume조절 기능의 추가
+                    - 이미지와 비디오의 로딩속도, 페이지 간 이동 최적화 <br />-
+                    더 많은 상호작용 추가 (상단바와 독바에서의)
                   </p>
                 </div>
               </div>

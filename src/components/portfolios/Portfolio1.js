@@ -31,9 +31,6 @@ const Portfolio1 = () => {
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>WHAT I LEARNED </span>
                   <p>
-                    {/* CSS의 전반적인 부분을 다뤄보았고 특히 before-after, z-index,
-                    animation, keyframes를 깊이 있게 경험했습니다. Jqeury와
-                    JavaScript의 qeurySelector, attribute의 변형을  */}
                     - CSS 전반적인 부분 (특히 before_after, z-index, animation,
                     keyframes) <br />- QuerySelector와 Attribute의 불러오기와
                     변형을 통한
@@ -42,7 +39,7 @@ const Portfolio1 = () => {
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}> SELF REVIEW </span>
                   <p>
-                    - LP 이미지와 노래의 변환 코드를 좀 더 소프트하게 만들기{' '}
+                    - LP 이미지와 노래의 변환 코드를 좀 더 소프트하게 만들기
                     <br />- CSS 코드 정리
                   </p>
                 </div>
