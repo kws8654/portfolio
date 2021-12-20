@@ -1,9 +1,5 @@
 # Portfolio
 
-<img width="100%" src="https://user-images.githubusercontent.com/91405218/146666790-cb9826f6-c0a1-438c-818c-f3a2a1e0b9ce.gif"/>
-
-### [LIVE LINK](https://kws8654.github.io/portfolio/#/)
-
 ## 1. Title
 
     - Portfolio
@@ -26,7 +22,7 @@
   npm install npm@latest -g
   ```
   
-* Clone the repo
+* Clone the repository
    ```sh
    git clone https://github.com/kws8654/portfolio.git
    ```
@@ -36,6 +32,11 @@
    ```
    
 ## 4. Usage Example
+
+<img width="100%" src="https://user-images.githubusercontent.com/91405218/146666790-cb9826f6-c0a1-438c-818c-f3a2a1e0b9ce.gif"/>
+
+### [LIVE LINK](https://kws8654.github.io/portfolio/#/)
+
 * 로딩 페이지
 * 메인 페이지
   * 포트폴리오
