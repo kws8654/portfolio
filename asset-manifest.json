@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.cf265182.chunk.css",
+    "main.css": "/portfolio/static/css/main.0cb94ae4.chunk.css",
     "main.js": "/portfolio/static/js/main.19277891.chunk.js",
     "main.js.map": "/portfolio/static/js/main.19277891.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.c218e639.js",
@@ -48,14 +48,14 @@
     "static/css/7.22b475a4.chunk.css.map": "/portfolio/static/css/7.22b475a4.chunk.css.map",
     "static/css/8.79468976.chunk.css.map": "/portfolio/static/css/8.79468976.chunk.css.map",
     "static/css/9.bcf7923e.chunk.css.map": "/portfolio/static/css/9.bcf7923e.chunk.css.map",
-    "static/css/main.cf265182.chunk.css.map": "/portfolio/static/css/main.cf265182.chunk.css.map",
+    "static/css/main.0cb94ae4.chunk.css.map": "/portfolio/static/css/main.0cb94ae4.chunk.css.map",
     "static/js/2.5aa2f9f4.chunk.js.LICENSE.txt": "/portfolio/static/js/2.5aa2f9f4.chunk.js.LICENSE.txt",
     "static/media/index.module.css": "/portfolio/static/media/NotoSansKR-Regular.457762ea.otf"
   },
   "entrypoints": [
     "static/js/runtime-main.c218e639.js",
     "static/js/2.5aa2f9f4.chunk.js",
-    "static/css/main.cf265182.chunk.css",
+    "static/css/main.0cb94ae4.chunk.css",
     "static/js/main.19277891.chunk.js"
   ]
 }
