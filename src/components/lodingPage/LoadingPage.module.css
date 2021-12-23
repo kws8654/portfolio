@@ -20,9 +20,9 @@
   line-height: 180px;
   text-align: center;
   font-size: 250px;
-  text-decoration: underline dotted;
+  text-decoration: underline dotted 20px;
   text-underline-position: under;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: textOpacity infinite 5s;
@@ -43,14 +43,35 @@
 .onButton {
   position: absolute;
   width: 10vh;
-  top: 10%;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-180deg);
+  animation: buttonColor infinite 5s;
 }
 
 .onButton:hover {
-  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
+  animation: buttonChange ease-in-out 1s forwards;
+}
+
+@keyframes buttonChange {
+  0% {
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 0, 0));
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(255, 0, 0));
+  }
+}
+
+@keyframes buttonColor {
+  0% {
+  }
+  50% {
+    -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(0, 255, 0));
+  }
+  100% {
+  }
 }
 
 .macBook {
@@ -64,6 +85,7 @@
 
 .macBar {
   position: absolute;
+  display: none;
   top: 94%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -72,7 +94,7 @@
 }
 
 .macRotate {
-  animation: rotate 3s forwards;
+  animation: rotate 3s ease-in-out forwards;
 }
 
 @keyframes rotate {
@@ -123,7 +145,7 @@
   background: white;
   position: absolute;
   box-shadow: 0px 0px 10px 1px white;
-  animation: nameThis 5s ease-out;
+  animation: chargingBar 5s ease-out;
 }
 
 .logo {
@@ -144,7 +166,7 @@
   width: 180px;
 }
 
-@keyframes nameThis {
+@keyframes chargingBar {
   0% {
     width: 0px;
   }

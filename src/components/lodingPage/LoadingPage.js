@@ -58,6 +58,7 @@ const LoadingPage = () => {
           <img
             className={styles.macBar}
             onClick={start}
+            style={{ display: isClickedCss && 'block' }}
             src='./image/macBar2.png'
             alt=''
           />
@@ -73,7 +74,7 @@ const LoadingPage = () => {
             style={{ display: isClickedCss && 'none' }}
             src='./image/powerOn.png'
             alt=''
-          ></img>
+          />
         </>
       ) : (
         <div className={styles.motherFrame}>
@@ -92,7 +93,7 @@ const LoadingPage = () => {
                 <div className={styles.login}>
                   <img
                     className={styles.porfileImg}
-                    src='./image/profile.png'
+                    src='./image/profile2.png'
                     alt=''
                   />
                   <div style={{ fontWeight: 'bold' }}>Guest {guestNum}</div>

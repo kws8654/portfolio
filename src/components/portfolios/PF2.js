@@ -1,9 +1,7 @@
 import React from 'react';
 
 const PF2 = ({ className }) => {
-  return (
-    <video className={className} src='./image/PF2.mov' alt='' autoPlay loop />
-  );
+  return <img className={className} src='./image/pf2.gif' alt='' />;
 };
 
 export default PF2;

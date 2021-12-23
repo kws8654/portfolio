@@ -3,7 +3,7 @@ import React from 'react';
 const FaceTimeVideo = () => {
   return (
     <video
-      src='./image/facetime.mp4'
+      src='./image/facetime.mov'
       width='300px'
       heigth='200px'
       autoPlay

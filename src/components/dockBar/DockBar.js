@@ -68,7 +68,7 @@ function DockBar({ onOffMusic }) {
           <img
             src='./image/git.png'
             className={styles.dockImage}
-            style={{ width: '53px', marginBottom: '5px' }}
+            style={{ width: '63px' }}
             alt=''
           />
         </a>

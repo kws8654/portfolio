@@ -46,10 +46,18 @@ const Portfolio2 = () => {
                 </div>
               </div>
               <div className={styles.links}>
-                <a href='https://github.com/kws8654/order-pizza'>
+                <a
+                  href='https://github.com/kws8654/order-pizza'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <img src='./image/github.png' alt='' />
                 </a>
-                <a href='https://kws8654.github.io/order-pizza/'>
+                <a
+                  href='https://kws8654.github.io/order-pizza/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <img src='./image/home.png' alt='' />
                 </a>
               </div>

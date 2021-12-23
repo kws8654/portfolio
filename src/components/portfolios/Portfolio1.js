@@ -15,40 +15,50 @@ const Portfolio1 = () => {
           <div className={styles.descPage}>
             <div className={styles.description}>
               <div className={styles.title}>
-                <h1>'TURN MY LP'</h1>
-                <p> [ HTML | CSS | JAVA SCRIPT | JQUERY ]</p>
+                <h1>'FLIP PAGE'</h1>
+                <p> [ REACT | HTML, CSS, JAVA SCRIPT | REST API ]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>SUMMARY</span>
                   <p>
-                    사용자가 재생, 정지, 곡 이동을 할 수 있는 오디오
-                    컨트롤러입니다. 턴 테이블의 모든 요소를 CSS로 구현하고
-                    톤암의 움직임, lp 회전 애니메이션을 추가하여 실제 턴테이블의
-                    상호작용을 재현했습니다.
+                    날씨정보와 시각, todolist 기능을 가진 반응형 웹
+                    어플리케이션입니다. OpenWeatherAPI에서 날씨정보를 가져오며
+                    카드 뒷면에서 원하는 도시를 설정할 수 있습니다.
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>WHAT I LEARNED </span>
                   <p>
-                    - CSS 전반적인 부분 (특히 before_after, z-index, animation,
-                    keyframes) <br />- QuerySelector와 Attribute의 불러오기와
-                    변형을 통한
+                    - REST API Fetch와 활용, 오류처리
+                    <br /> - UseState, UseEffect의 필요 상황을 인지하고 적용
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}> SELF REVIEW </span>
                   <p>
-                    - LP 이미지와 노래의 변환 코드를 좀 더 소프트하게 만들기
-                    <br />- CSS 코드 정리
+                    - 세부 날씨 정보(일기예보, 풍량, 습도) 추가 예정
+                    <br />- 한글로 지명 검색할 수 있도록 변경
+                    <br />
+                    <span style={{ textDecoration: 'line-through' }}>
+                      - 온도와 날씨에 따라 변하는 CSS 추가
+                    </span>
                   </p>
                 </div>
               </div>
               <div className={styles.links}>
-                <a href='https://github.com/kws8654/my-lp-list'>
+                <a
+                  href='https://github.com/kws8654/flip-page'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <img src='./image/github.png' alt='' />
                 </a>
-                <a href='https://kws8654.github.io/my-lp-list/'>
+                <a
+                  href='https://kws8654.github.io/flip-page/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   <img src='./image/home.png' alt='' />
                 </a>
               </div>

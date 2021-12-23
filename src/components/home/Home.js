@@ -211,10 +211,9 @@ function Home({ isClickedMusic, isClickedKakao }) {
             Sang-myung University _ Scenography (15.03 - 21.02)
           </p>
           <p>
-            ✔️ Java <br />
-            ✔️ JavaScript, jQuery <br />
             ✔️ React.js, Redux, TypeScript <br />
-            ✔️ Oracle, MongoDB, Firebase <br />
+            ✔️ HTML, CSS, JavaScript, jQuery <br />
+            ✔️ Java, Oracle, MongoDB, Firebase <br />
           </p>
           <p>
             ✅ TOEIC 905 <br />

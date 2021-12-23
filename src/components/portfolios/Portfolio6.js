@@ -18,10 +18,18 @@ const Portfolio6 = () => {
                 </div>
                 <h1>ACCOUNT BOOK</h1>
                 <div className={styles.links}>
-                  <a href='https://github.com/kws8654/-account-book'>
+                  <a
+                    href='https://github.com/kws8654/-account-book'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <img src='./image/github.png' alt='' />
                   </a>
-                  <a href='https://kws8654.github.io/-account-book/'>
+                  <a
+                    href='https://kws8654.github.io/-account-book/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <img src='./image/home.png' alt='' />
                   </a>
                 </div>
@@ -32,7 +40,11 @@ const Portfolio6 = () => {
                 </div>
                 <h1>WEATHER APPLICATION</h1>
                 <div className={styles.links}>
-                  <a href='https://github.com/kws8654/my-lp-list'>
+                  <a
+                    href='https://github.com/kws8654/weatherAPI-practice'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <img src='./image/github.png' alt='' />
                   </a>
                 </div>
@@ -43,7 +55,11 @@ const Portfolio6 = () => {
                 </div>
                 <h1>SHOPPING APPLICATION</h1>
                 <div className={styles.links}>
-                  <a href='https://github.com/kws8654/react-node-onlineStore'>
+                  <a
+                    href='https://github.com/kws8654/react-node-onlineStore'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <img src='./image/github.png' alt='' />
                   </a>
                 </div>
