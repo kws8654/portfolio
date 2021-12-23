@@ -16,7 +16,7 @@ const Portfolio2 = () => {
             <div className={styles.description}>
               <div className={styles.title}>
                 <h1>'PIZZA HOUSE'</h1>
-                <p> [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE ]</p>
+                <p> [ REACT | HTML, CSS, JAVASCRIPT | FIREBASE ]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
@@ -33,8 +33,7 @@ const Portfolio2 = () => {
                   <p>
                     - Portal을 이용한 모달 처리 <br />
                     - React hook의 Context, Reducer의 적용 <br />- UI
-                    컴포넌트(Card, Input, Modal)를 활용해 react의 장점인
-                    재사용성 극대화
+                    컴포넌트(Card, Input, Modal)를 통해 react의 재사용성 극대화
                   </p>
                 </div>
                 <div className={styles.subDetail}>

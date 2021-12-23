@@ -3,7 +3,7 @@ import styles from './Portfolio5.module.css';
 import MiddlePage from '../middlePage/MiddlePage';
 import LoadingSpinner from '../UI/LoadingSpinner';
 
-const Content = lazy(() => import('./PF4'));
+const Content = lazy(() => import('./PF5'));
 const Portfolio5 = () => {
   return (
     <MiddlePage>
@@ -16,9 +16,7 @@ const Portfolio5 = () => {
             <div className={styles.description}>
               <div className={styles.title}>
                 <h1>'PORTFOLIO'</h1>
-                <p>
-                  [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE | CLOUDINARY ]
-                </p>
+                <p>[ REACT | HTML, CSS, JAVASCRIPT]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
@@ -34,14 +32,14 @@ const Portfolio5 = () => {
                   <p>
                     - React의 작업, 배포까지의 전반적인 부분 (특히 router, lazy
                     loading, useMemo, useCallback의 사용법과 적용) <br />
-                    - React 배포에서 생기는 오류와 해결 <br />
+                    - React 배포 과정에서 생기는 오류와 해결 <br />
                   </p>
                 </div>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}> SELF REVIEW </span>
                   <p>
                     - 이미지와 비디오의 로딩속도, 페이지 간 이동 최적화 <br />-
-                    더 많은 상호작용 추가 (상단바와 독바에서의)
+                    더 많은 상호작용 추가 (상단바와 독바)
                   </p>
                 </div>
               </div>

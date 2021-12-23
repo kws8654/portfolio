@@ -18,7 +18,7 @@ const Portfolio4 = () => {
                 <h1>'Card Diary'</h1>
                 <p>
                   {' '}
-                  [ REACT | HTML, CSS, JAVA SCRIPT | FIREBASE | CLOUDINARY ]
+                  [ REACT | HTML, CSS, JAVASCRIPT | FIREBASE | CLOUDINARY ]
                 </p>
               </div>
               <div className={styles.detail}>

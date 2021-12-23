@@ -16,7 +16,7 @@ const Portfolio3 = () => {
             <div className={styles.description}>
               <div className={styles.title}>
                 <h1>'TURN MY LP'</h1>
-                <p> [ HTML | CSS | JAVA SCRIPT | JQUERY ]</p>
+                <p> [ HTML | CSS | JAVASCRIPT | JQUERY ]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
@@ -33,7 +33,7 @@ const Portfolio3 = () => {
                   <p>
                     - CSS 전반적인 부분 (특히 before_after, z-index, animation,
                     keyframes) <br />- QuerySelector와 Attribute의 불러오기와
-                    변형을 통한
+                    변형 활용
                   </p>
                 </div>
                 <div className={styles.subDetail}>

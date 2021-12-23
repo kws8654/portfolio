@@ -16,13 +16,13 @@ const Portfolio1 = () => {
             <div className={styles.description}>
               <div className={styles.title}>
                 <h1>'FLIP PAGE'</h1>
-                <p> [ REACT | HTML, CSS, JAVA SCRIPT | REST API ]</p>
+                <p> [ REACT | HTML, CSS, JAVASCRIPT | REST API ]</p>
               </div>
               <div className={styles.detail}>
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>SUMMARY</span>
                   <p>
-                    날씨정보와 시각, todolist 기능을 가진 반응형 웹
+                    날씨정보와 시각, Todolist 기능을 가진 반응형 웹
                     어플리케이션입니다. OpenWeatherAPI에서 날씨정보를 가져오며
                     카드 뒷면에서 원하는 도시를 설정할 수 있습니다.
                   </p>
@@ -30,8 +30,8 @@ const Portfolio1 = () => {
                 <div className={styles.subDetail}>
                   <span className={styles.subTitle}>WHAT I LEARNED </span>
                   <p>
-                    - REST API Fetch와 활용, 오류처리
-                    <br /> - UseState, UseEffect의 필요 상황을 인지하고 적용
+                    - REST API의 Fetch와 활용, 오류처리
+                    <br /> - UseState, UseEffect의 필요 상황의 인지하고 적용
                   </p>
                 </div>
                 <div className={styles.subDetail}>
