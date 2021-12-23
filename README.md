@@ -6,7 +6,7 @@
     
 ## 2. Summary
 
-    - 개인 포트폴리오입니다. 실제 랩탑에서 동작하는 모션과 상호작용, 애니메이션을 React, JacaScript, CSS로 구현했습니다.
+    - 개인 포트폴리오입니다. 실제 랩탑에서 동작하는 모션과 상호작용, 애니메이션을 React, JavaScript, CSS로 구현했습니다.
 
 ## 2-1. Built with 
     - React.js
