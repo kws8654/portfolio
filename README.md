@@ -33,7 +33,7 @@
    
 ## 4. Usage Example
 
-<img width="100%" src="https://user-images.githubusercontent.com/91405218/146666790-cb9826f6-c0a1-438c-818c-f3a2a1e0b9ce.gif"/>
+<img width="50%" src="https://user-images.githubusercontent.com/91405218/147205396-d78ee15e-54db-4fa9-a0b3-9d209e3f5be0.gif"/>
 
 ### [LIVE LINK](https://kws8654.github.io/portfolio/#/)
 
