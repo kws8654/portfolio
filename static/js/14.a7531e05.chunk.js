@@ -1,2 +1,0 @@
-(this.webpackJsonpmacfolio=this.webpackJsonpmacfolio||[]).push([[14],{49:function(a,o,s){"use strict";s.r(o);s(1);var c=s(0);o.default=function(a){var o=a.className;return Object(c.jsx)("video",{className:o,src:"./image/PF5.mov",alt:"",autoPlay:!0,loop:!0})}}}]);
-//# sourceMappingURL=14.a7531e05.chunk.js.map
