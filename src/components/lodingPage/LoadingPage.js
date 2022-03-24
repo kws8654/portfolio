@@ -7,31 +7,29 @@ const LoadingPage = () => {
   const [isClickedCss, setIsClickedCss] = useState(false);
   const [isClickedHome, setIsClickedHome] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [mainText, setMainText] = useState([
-    '안녕하세요',
-    'Hello',
-    'こんにちは',
-    'Hola!',
-    '你好',
-    'Adiós',
-    'Bonjour',
-    'مرحبًا',
-    'Guten Tag',
-  ]);
   const [index, setIndex] = useState(0);
 
+  const mainText = ['안녕하세요', 'Hello', 'こんにちは', 'Hola!', '你好', 'Adiós', 'Bonjour', 'مرحبًا', 'Guten Tag'];
+
   const guestNum = Math.floor(Math.random() * 100);
+
   const startUp = useRef();
+
   let history = useHistory();
 
   function pushMain() {
     history.push('/main');
   }
+
   useEffect(() => {
     setInterval(() => {
       setIndex((index) => index + 1);
     }, 5000);
-  }, []);
+
+    return () => {
+      clearInterval(index);
+    };
+  });
 
   const cssClass = [styles.macBook, isClickedCss && styles.macRotate];
   const start = () => {
@@ -49,12 +47,7 @@ const LoadingPage = () => {
     <>
       {isClickedHome ? (
         <>
-          <img
-            className={cssClass.join(' ')}
-            onClick={start}
-            src='./image/macMonitor2.png'
-            alt=''
-          />
+          <img className={cssClass.join(' ')} onClick={start} src='./image/macMonitor2.png' alt='' />
           <img
             className={styles.macBar}
             onClick={start}
@@ -62,10 +55,7 @@ const LoadingPage = () => {
             src='./image/macBar2.png'
             alt=''
           />
-          <div
-            className={styles.mainText}
-            style={{ display: isClickedCss && 'none' }}
-          >
+          <div className={styles.mainText} style={{ display: isClickedCss && 'none' }}>
             {mainText[`${index}`]}
           </div>
           <img
@@ -91,24 +81,12 @@ const LoadingPage = () => {
               <Navbar />
               <div className={styles.loginFrame}>
                 <div className={styles.login}>
-                  <img
-                    className={styles.porfileImg}
-                    src='./image/profile2.png'
-                    alt=''
-                  />
+                  <img className={styles.porfileImg} src='./image/profile2.png' alt='' />
                   <div style={{ fontWeight: 'bold' }}>Guest {guestNum}</div>
                   <form onSubmit={pushMain}>
-                    <input
-                      className={styles.password}
-                      type='password'
-                      placeholder='  암호 입력'
-                    />
+                    <input className={styles.password} type='password' placeholder='  암호 입력' />
                   </form>
-                  <div
-                    style={{ fontSize: '13px', color: 'gray', margin: '5px' }}
-                  >
-                    TYPE ANY LETTERS
-                  </div>
+                  <div style={{ fontSize: '13px', color: 'gray', margin: '5px' }}>TYPE ANY LETTERS</div>
                 </div>
               </div>
             </>

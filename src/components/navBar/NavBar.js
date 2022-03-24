@@ -15,13 +15,15 @@ function NavBar({ onOffKakaoQR }) {
       const minutes = time.getMinutes();
       setTime(
         `${month + 1}월 ${date}일 (${week[day]}) ` +
-          `${hours < 10 ? `0${hours}` : hours}:${
-            minutes < 10 ? `0${minutes}` : minutes
-          }`
+          `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`,
       );
     };
     clock();
     setInterval(clock, 1000);
+
+    return () => {
+      clearInterval(clock());
+    };
   }, []);
 
   return (
@@ -47,36 +49,11 @@ function NavBar({ onOffKakaoQR }) {
           alt=''
           onClick={onOffKakaoQR}
         />
-        <img
-          src='./image/internet.png'
-          className={styles.navBarSystemIcon}
-          style={{ width: '14px' }}
-          alt=''
-        />
-        <img
-          src='./image/battery.png'
-          className={styles.navBarSystemIcon}
-          style={{ width: '20px' }}
-          alt=''
-        />
-        <img
-          src='./image/wifi.png'
-          className={styles.navBarSystemIcon}
-          style={{ width: '18px' }}
-          alt=''
-        />
-        <img
-          src='./image/magnifier.png'
-          className={styles.navBarSystemIcon}
-          style={{ width: '14px' }}
-          alt=''
-        />
-        <img
-          src='./image/toggle.png'
-          className={styles.navBarSystemIcon}
-          style={{ width: '14px' }}
-          alt=''
-        />
+        <img src='./image/internet.png' className={styles.navBarSystemIcon} style={{ width: '14px' }} alt='' />
+        <img src='./image/battery.png' className={styles.navBarSystemIcon} style={{ width: '20px' }} alt='' />
+        <img src='./image/wifi.png' className={styles.navBarSystemIcon} style={{ width: '18px' }} alt='' />
+        <img src='./image/magnifier.png' className={styles.navBarSystemIcon} style={{ width: '14px' }} alt='' />
+        <img src='./image/toggle.png' className={styles.navBarSystemIcon} style={{ width: '14px' }} alt='' />
         <strong>
           <span className={styles.clock}>{time}</span>
         </strong>
