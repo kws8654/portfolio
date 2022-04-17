@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState, lazy, Suspense } from 'react';
-import styles from './Home.module.css';
-import { useHistory } from 'react-router-dom';
-import LoadingSpinner from '../UI/LoadingSpinner';
+import React, { useRef, useEffect, useState, lazy, Suspense } from "react";
+import styles from "./Home.module.css";
+import { useHistory } from "react-router-dom";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
-const FaceTimeVideo = lazy(() => import('./FaceTimeVideo'));
+const FaceTimeVideo = lazy(() => import("./FaceTimeVideo"));
 function Home({ isClickedMusic, isClickedKakao }) {
   const [isClicked, setIsClicked] = useState(false);
   const [isClicked2, setIsClicked2] = useState(false);
@@ -11,27 +11,27 @@ function Home({ isClickedMusic, isClickedKakao }) {
   let history = useHistory();
 
   function pushPF1() {
-    history.push('/portfolio1');
+    history.push("/portfolio1");
   }
 
   function pushPF2() {
-    history.push('/portfolio2');
+    history.push("/portfolio2");
   }
 
   function pushPF3() {
-    history.push('/portfolio3');
+    history.push("/portfolio3");
   }
 
   function pushPF4() {
-    history.push('/portfolio4');
+    history.push("/portfolio4");
   }
 
   function pushPF5() {
-    history.push('/portfolio5');
+    history.push("/portfolio5");
   }
 
   function pushPF6() {
-    history.push('/portfolio6');
+    history.push("/portfolio6");
   }
 
   const container = useRef();
@@ -58,7 +58,7 @@ function Home({ isClickedMusic, isClickedKakao }) {
     let originX2 = null;
     let originY2 = null;
 
-    box.current.addEventListener('mousedown', (e) => {
+    box.current.addEventListener("mousedown", (e) => {
       e.preventDefault();
       isDragging = true;
       originX = e.clientX;
@@ -67,11 +67,11 @@ function Home({ isClickedMusic, isClickedKakao }) {
       originTop = box.current.offsetTop;
     });
 
-    document.addEventListener('mouseup', (e) => {
+    document.addEventListener("mouseup", (e) => {
       isDragging = false;
     });
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
       if (isDragging) {
         const diffX = e.clientX - originX;
         const diffY = e.clientY - originY;
@@ -88,7 +88,7 @@ function Home({ isClickedMusic, isClickedKakao }) {
       }
     });
 
-    box2.current.addEventListener('mousedown', (e) => {
+    box2.current.addEventListener("mousedown", (e) => {
       e.preventDefault();
       isDragging2 = true;
       originX2 = e.clientX;
@@ -97,11 +97,11 @@ function Home({ isClickedMusic, isClickedKakao }) {
       originTop2 = box2.current.offsetTop;
     });
 
-    document.addEventListener('mouseup', (e) => {
+    document.addEventListener("mouseup", (e) => {
       isDragging2 = false;
     });
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
       if (isDragging2) {
         const diffX2 = e.clientX - originX2;
         const diffY2 = e.clientY - originY2;
@@ -123,18 +123,18 @@ function Home({ isClickedMusic, isClickedKakao }) {
     <div className={styles.home} ref={container}>
       <figure>
         <img
-          src='./image/pf1.png'
+          src="./image/pf1.png"
           className={styles.file}
-          alt=''
+          alt=""
           onClick={pushPF1}
         />
         <figcaption>portfolio 1</figcaption>
       </figure>
       <figure>
         <img
-          src='./image/pf2.png'
+          src="./image/pf2.png"
           className={styles.file}
-          alt=''
+          alt=""
           onClick={pushPF2}
         />
         <figcaption>portfolio 2</figcaption>
@@ -142,18 +142,18 @@ function Home({ isClickedMusic, isClickedKakao }) {
 
       <figure>
         <img
-          src='./image/pf3.png'
+          src="./image/pf3.png"
           className={styles.file}
-          alt=''
+          alt=""
           onClick={pushPF3}
         />
         <figcaption>portfolio 3</figcaption>
       </figure>
       <figure>
         <img
-          src='./image/pf4.png'
+          src="./image/pf4.png"
           className={styles.file}
-          alt=''
+          alt=""
           onClick={pushPF4}
         />
         <figcaption>portfolio 4</figcaption>
@@ -161,18 +161,18 @@ function Home({ isClickedMusic, isClickedKakao }) {
       <div className={styles.file2ndLine}>
         <figure>
           <img
-            src='./image/pf5.png'
+            src="./image/pf5.png"
             className={styles.file2nd}
-            alt=''
+            alt=""
             onClick={pushPF5}
           />
           <figcaption>portfolio 5</figcaption>
         </figure>
         <figure>
           <img
-            src='./image/pf6.png'
+            src="./image/pf6.png"
             className={styles.file2nd}
-            alt=''
+            alt=""
             onClick={pushPF6}
           />
           <figcaption>portfolio 6</figcaption>
@@ -186,9 +186,9 @@ function Home({ isClickedMusic, isClickedKakao }) {
           <strong>
             <span
               style={{
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)',
+                position: "absolute",
+                left: "50%",
+                transform: "translateX(-50%)",
               }}
             >
               Resume
@@ -197,12 +197,12 @@ function Home({ isClickedMusic, isClickedKakao }) {
         </div>
 
         <div className={styles.memoContent}>
-          <strong style={{ fontSize: '20px' }}> Wonsub Kim, 김원섭 </strong>
+          <strong style={{ fontSize: "20px" }}> Wonsub Kim, 김원섭 </strong>
           <br />
           <br />
           📞 010-6225-8*** <br />
           📧
-          <a href='mailto: raykim.dev@gmail.com?subject=We want to contact with you, RAY!'>
+          <a href="mailto: raykim.dev@gmail.com?subject=We want to contact with you, RAY!">
             raykim.dev@gmail.com
           </a>
           <p>
@@ -211,9 +211,9 @@ function Home({ isClickedMusic, isClickedKakao }) {
             Sang-myung University _ Scenography (15.03 - 21.02)
           </p>
           <p>
-            ✔️ React.js, Redux, TypeScript <br />
-            ✔️ HTML, CSS, JavaScript, jQuery <br />
-            ✔️ Java, Oracle, MongoDB, Firebase <br />
+            ✔️ React.js, TypeScript, Emotion.js, Next.js <br />
+            ✔️ HTML, CSS, JavaScript <br />
+            ✔️ Java, Oracle, Firebase, MongoDB <br />
           </p>
           <p>
             ✅ TOEIC 905 <br />
@@ -230,9 +230,9 @@ function Home({ isClickedMusic, isClickedKakao }) {
           <strong>
             <span
               style={{
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)',
+                position: "absolute",
+                left: "50%",
+                transform: "translateX(-50%)",
               }}
             >
               Facetime
@@ -245,8 +245,8 @@ function Home({ isClickedMusic, isClickedKakao }) {
           </Suspense>
         </div>
       </div>
-      <div className={styles.alret} style={{ display: isClicked && 'none' }}>
-        <p style={{ fontWeight: 'bold' }}>알림</p>
+      <div className={styles.alret} style={{ display: isClicked && "none" }}>
+        <p style={{ fontWeight: "bold" }}>알림</p>
         <p>NICE TO MEET YOU STRANGER :)</p>
         <p
           className={styles.xButton}
@@ -259,12 +259,12 @@ function Home({ isClickedMusic, isClickedKakao }) {
       </div>
       <div
         className={styles.alret2}
-        style={{ display: isClicked2 && 'none', top: isClicked && '50px' }}
+        style={{ display: isClicked2 && "none", top: isClicked && "50px" }}
       >
-        <p style={{ fontWeight: 'bold' }}>중요 알림</p>
+        <p style={{ fontWeight: "bold" }}>중요 알림</p>
         <p>
-          You can <span style={{ color: 'red' }}>drag</span> and
-          <span style={{ color: 'red' }}> move</span> SOMETHING
+          You can <span style={{ color: "red" }}>drag</span> and
+          <span style={{ color: "red" }}> move</span> SOMETHING
         </p>
         <p
           className={styles.xButton}
@@ -277,16 +277,16 @@ function Home({ isClickedMusic, isClickedKakao }) {
       </div>
       <div
         className={styles.music}
-        style={{ display: isClickedMusic ? 'block' : 'none' }}
+        style={{ display: isClickedMusic ? "block" : "none" }}
       >
-        <audio src='./image/audio.mp3' type='audio/mp3' controls loop />
+        <audio src="./image/audio.mp3" type="audio/mp3" controls loop />
       </div>
       <div
         className={styles.kakaoFrame}
-        style={{ display: isClickedKakao ? 'block' : 'none' }}
+        style={{ display: isClickedKakao ? "block" : "none" }}
       >
         <div className={styles.kakaoPop} />
-        <img className={styles.kakaoQR} src='./image/kakaoQR.jpg' alt='' />
+        <img className={styles.kakaoQR} src="./image/kakaoQR.jpg" alt="" />
       </div>
     </div>
   );
