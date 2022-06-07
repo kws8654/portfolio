@@ -12,40 +12,23 @@ function DockBar({ onOffMusic }) {
         <a href='https://www.discord.com' target='_blank' rel='noreferrer'>
           <img src='./image/discord.png' className={styles.dockImage} alt='' />
         </a>
-        <a
-          href='https://www.eclipse.org/documentation/'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <a href='https://www.eclipse.org/documentation/' target='_blank' rel='noreferrer'>
           <img src='./image/eclipse.png' className={styles.dockImage} alt='' />
         </a>
 
-        <img
-          src='./image/music.png'
-          className={styles.dockImage}
-          alt=''
-          onClick={onOffMusic}
-        />
+        <img src='./image/music.png' className={styles.dockImage} alt='' onClick={onOffMusic} />
 
-        <a
-          href='https://code.visualstudio.com/docs'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <a href='https://code.visualstudio.com/docs' target='_blank' rel='noreferrer'>
           <img src='./image/vsc.png' className={styles.dockImage} alt='' />
         </a>
         <a href='https://docs.docker.com/' target='_blank' rel='noreferrer'>
           <img src='./image/docker.png' className={styles.dockImage} alt='' />
         </a>
-        <a
-          href='https://iterm2.com/documentation.html'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <a href='https://iterm2.com/documentation.html' target='_blank' rel='noreferrer'>
           <img src='./image/terminal.png' className={styles.dockImage} alt='' />
         </a>
         <a
-          href='https://humane-louse-035.notion.site/Front-end-Roadmap-d86c1acb191b4badb846ddd50f7ad359'
+          href='https://wonsubraykim.notion.site/ENGINEERING-WORK-SPACE-d86c1acb191b4badb846ddd50f7ad359'
           target='_blank'
           rel='noreferrer'
         >
@@ -65,12 +48,7 @@ function DockBar({ onOffMusic }) {
           />
         </a>
         <a href='https://github.com/kws8654' target='_blank' rel='noreferrer'>
-          <img
-            src='./image/git.png'
-            className={styles.dockImage}
-            style={{ width: '63px' }}
-            alt=''
-          />
+          <img src='./image/git.png' className={styles.dockImage} style={{ width: '63px' }} alt='' />
         </a>
       </div>
     </>
