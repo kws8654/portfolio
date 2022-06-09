@@ -3,13 +3,13 @@
     "main.css": "/portfolio/static/css/main.c31a1251.chunk.css",
     "main.js": "/portfolio/static/js/main.4799de20.chunk.js",
     "main.js.map": "/portfolio/static/js/main.4799de20.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.ae398cec.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.ae398cec.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.23e8491a.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.23e8491a.js.map",
     "static/js/2.ce85c8b2.chunk.js": "/portfolio/static/js/2.ce85c8b2.chunk.js",
     "static/js/2.ce85c8b2.chunk.js.map": "/portfolio/static/js/2.ce85c8b2.chunk.js.map",
     "static/css/3.b0ca2b50.chunk.css": "/portfolio/static/css/3.b0ca2b50.chunk.css",
-    "static/js/3.cc9d7dc9.chunk.js": "/portfolio/static/js/3.cc9d7dc9.chunk.js",
-    "static/js/3.cc9d7dc9.chunk.js.map": "/portfolio/static/js/3.cc9d7dc9.chunk.js.map",
+    "static/js/3.dc8e1e77.chunk.js": "/portfolio/static/js/3.dc8e1e77.chunk.js",
+    "static/js/3.dc8e1e77.chunk.js.map": "/portfolio/static/js/3.dc8e1e77.chunk.js.map",
     "static/css/4.1b1a028d.chunk.css": "/portfolio/static/css/4.1b1a028d.chunk.css",
     "static/js/4.86e02f15.chunk.js": "/portfolio/static/js/4.86e02f15.chunk.js",
     "static/js/4.86e02f15.chunk.js.map": "/portfolio/static/js/4.86e02f15.chunk.js.map",
@@ -53,7 +53,7 @@
     "static/media/index.module.css": "/portfolio/static/media/NotoSansKR-Regular.457762ea.otf"
   },
   "entrypoints": [
-    "static/js/runtime-main.ae398cec.js",
+    "static/js/runtime-main.23e8491a.js",
     "static/js/2.ce85c8b2.chunk.js",
     "static/css/main.c31a1251.chunk.css",
     "static/js/main.4799de20.chunk.js"
