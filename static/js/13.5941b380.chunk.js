@@ -1,0 +1,2 @@
+(this.webpackJsonpmacfolio=this.webpackJsonpmacfolio||[]).push([[13],{48:function(a,s,c){"use strict";c.r(s);c(1);var i=c(0);s.default=function(a){var s=a.className;return Object(i.jsx)("img",{className:s,src:"./image/pf3.gif",alt:""})}}}]);
+//# sourceMappingURL=13.5941b380.chunk.js.map
