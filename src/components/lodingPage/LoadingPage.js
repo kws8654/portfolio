@@ -46,7 +46,7 @@ const LoadingPage = () => {
   return (
     <>
       {isClickedHome ? (
-        <>
+        <div className={styles.loadingMotherFrame}>
           <img className={cssClass.join(' ')} onClick={start} src='./image/macMonitor2.png' alt='' />
           <img
             className={styles.macBar}
@@ -65,7 +65,7 @@ const LoadingPage = () => {
             src='./image/powerOn.png'
             alt=''
           />
-        </>
+        </div>
       ) : (
         <div className={styles.motherFrame}>
           {isLoading ? (
