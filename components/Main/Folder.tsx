@@ -29,9 +29,7 @@ export const Folder = forwardRef((props: FolderProps, ref: ForwardedRef<any>) =>
         src={folder}
         alt={'folder'}
         width={80}
-        className={`${
-          clickedPortfolio === 'folder' && 'border bg-gray-500 bg-opacity-50 rounded-md'
-        }`}
+        className={`${clickedPortfolio === 'folder' && 'border bg-gray-500/50 rounded-md'}`}
       />
       <p
         className={`mt-2 styles-text-sm text-white ${

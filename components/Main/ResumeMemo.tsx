@@ -39,7 +39,7 @@ export const ResumeMemo = forwardRef((_: object, ref: ForwardedRef<any>) => {
         </p>
         <br />
         <p>
-          ✔️ HTML / CSS / Sass / Less / Styled-Components / Emotion.js / Tailwind
+          ✔️ HTML / CSS / Sass / Less / Styled-Components / Tailwind
           <br />
           ✔️ JavaScript(~ES7) / TypeScript / HTML5 / JavaScript API
           <br />

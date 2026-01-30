@@ -1,11 +1,10 @@
-/* @jsxImportSource @emotion/react */
-import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
-import tw from 'twin.macro';
 import porfoliFile from '@public/images/pf1.png';
 import { useRouter } from 'next/router';
 import { useRecoilState } from 'recoil';
 import { atomClickedPortfolio } from '@/reocil/ClickedPortfolio/atom';
+import { cva } from 'class-variance-authority';
 
 const ABSOLUTE_POSITION = [
   { top: '40px', left: '20px' },
@@ -22,6 +21,26 @@ interface PortfolioProps {
   link: string;
 }
 
+const containerClass = cva('absolute flex flex-col items-center cursor-pointer');
+
+const imageClass = cva('', {
+  variants: {
+    selected: {
+      true: 'border bg-gray-500/50 rounded-md',
+      false: '',
+    },
+  },
+});
+
+const labelClass = cva('px-1 styles-text-sm text-white', {
+  variants: {
+    selected: {
+      true: 'bg-blue-600 rounded-md',
+      false: '',
+    },
+  },
+});
+
 export const Portfolio = forwardRef((props: PortfolioProps, ref: ForwardedRef<any>) => {
   Portfolio.displayName = 'Portfolio';
   const { index, title, link } = props;
@@ -36,10 +55,8 @@ export const Portfolio = forwardRef((props: PortfolioProps, ref: ForwardedRef<an
   return (
     <div
       ref={ref}
-      css={[
-        tw`absolute flex flex-col items-center cursor-pointer`,
-        { top: ABSOLUTE_POSITION[index].top, left: ABSOLUTE_POSITION[index].left },
-      ]}
+      className={containerClass()}
+      style={{ top: ABSOLUTE_POSITION[index].top, left: ABSOLUTE_POSITION[index].left }}
       onClick={onClickHandler}
       onDoubleClick={() => router.push(link)}
     >
@@ -47,15 +64,9 @@ export const Portfolio = forwardRef((props: PortfolioProps, ref: ForwardedRef<an
         src={porfoliFile}
         alt={'porfoliFile'}
         width={100}
-        className={`${title === clickedPortfolio && 'border bg-gray-500 bg-opacity-50 rounded-md'}`}
+        className={imageClass({ selected: title === clickedPortfolio })}
       />
-      <p
-        className={`px-1 styles-text-sm text-white ${
-          title === clickedPortfolio && 'bg-blue-600 rounded-md'
-        }`}
-      >
-        {title}
-      </p>
+      <p className={labelClass({ selected: title === clickedPortfolio })}>{title}</p>
     </div>
   );
 });

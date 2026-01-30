@@ -30,7 +30,7 @@ export const DocFolder = forwardRef((props: DetailResumeProps, ref: ForwardedRef
         alt={'docs'}
         width={80}
         className={`${
-          clickedPortfolio === 'docs' && 'border bg-gray-500 bg-opacity-50 rounded-md'
+          clickedPortfolio === 'docs' && 'border bg-gray-500/50 rounded-md'
         }`}
       />
       <p

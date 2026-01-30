@@ -82,7 +82,7 @@ const LoadingScene = () => {
     <section className='flex justify-center items-center w-full h-screen bg-neutral-900'>
       <div className='flex flex-col justify-center items-center gap-[60px] w-[1400px] h-[800px] border border-gray-500 rounded-lg bg-black overflow-hidden styles-transition'>
         <Image src={appleLogo} alt={'appleLogo'} width={100} height={100} />
-        <div className='flex items-center w-[450px] h-[10px] border rounded-lg overflow-hidden'>
+        <div className='flex items-center w-[450px] h-[10px] border border-white rounded-lg overflow-hidden'>
           <div className='styles-loading-bar'>{/*Loading-Bar*/}</div>
         </div>
       </div>
@@ -106,7 +106,7 @@ const LogInScene = () => {
         <form onSubmit={pushToMain}>
           <input
             type='password'
-            className='rounded-2xl mt-4 mb-2 p-1 w-[200px] styles-text-xs'
+            className='rounded-2xl mt-4 mb-2 p-1 w-[200px] styles-text-xs bg-white'
             placeholder={' 암호 입력'}
           />
         </form>

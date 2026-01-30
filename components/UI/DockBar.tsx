@@ -21,7 +21,7 @@ export const DockBar = () => {
 
   return (
     <>
-      <section className='styles-x-center bottom-8 px-2 flex items-center justify-between rounded-2xl bg-gray-400 bg-opacity-60 h-[70px] w-[750px] md:hidden'>
+      <section className='styles-x-center bottom-8 px-2 flex items-center justify-between rounded-2xl bg-gray-400/60 h-[70px] w-[750px] md:hidden'>
         <Link href='https://www.google.com' passHref rel='noopener noreferrer' target='_blank'>
           <Image src={chrome} alt={'chrome'} width={65} height={65} className='styles-dock-icon' />
         </Link>
@@ -80,7 +80,7 @@ export const DockBar = () => {
         {/*크롬, 디스코드, 카카오톡, 음악, 갤러리, 터미널*/}
         {/*링크드인, 깃허브, 노션은 외부 링크로 이동*/}
       </section>
-      <section className='hidden styles-x-center bottom-8 px-2 items-center justify-between rounded-2xl bg-gray-400 bg-opacity-60 h-[70px] w-[90%] md:flex'>
+      <section className='hidden styles-x-center bottom-8 px-2 items-center justify-between rounded-2xl bg-gray-400/60 h-[70px] w-[90%] md:flex'>
         <Image src={chrome} alt={'chrome'} width={65} className='styles-dock-icon' />
         <Image src={music} alt={'music'} width={65} className='styles-dock-icon' />
         <Image src={notion} alt={'notion'} width={55} className='styles-dock-icon' />

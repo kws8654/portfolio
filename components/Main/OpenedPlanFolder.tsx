@@ -36,11 +36,11 @@ export const OpenedPlanFolder = forwardRef(
     return (
       <div
         ref={ref}
-        className={`absolute top-[230px] left-[320px] w-[720px] h-[415px] border rounded-lg bg-neutral-100 styles-text-xs overflow-hidden hover:z-40 ${
+        className={`absolute top-[230px] left-[320px] w-[720px] h-[415px] border border-gray-300 rounded-lg bg-neutral-100 styles-text-xs overflow-hidden hover:z-40 ${
           onClickPlanDocFolder ? 'flex' : 'hidden'
         }`}
       >
-        <div className='flex flex-col w-1/4 p-2 border-r'>
+        <div className='flex flex-col w-1/4 p-2 border-r border-gray-200'>
           <Buttons onClickClose={setOnClickPlanDocFolder} ref={ref} />
           <div className='flex flex-col gap-[3px] p-2 mt-6'>
             <p className='text-gray-500 font-semibold text-[12px]'>즐겨찾기</p>
@@ -70,7 +70,7 @@ export const OpenedPlanFolder = forwardRef(
           </div>
         </div>
         <div className='w-3/4 bg-white'>
-          <div className='flex justify-between items-center px-4 h-[10%] border-b'>
+          <div className='flex justify-between items-center px-4 h-[10%] border-b border-gray-200'>
             <div className='flex items-center gap-[15px] styles-text-xl'>
               <p className='text-gray-700'>{`<`}</p>
               <p className='text-gray-400'>{`>`}</p>
@@ -79,7 +79,7 @@ export const OpenedPlanFolder = forwardRef(
             <input
               type='text'
               placeholder=' 검색'
-              className='w-[140px] rounded-md border bg-gray-100'
+              className='w-[140px] rounded-md border border-gray-300 bg-gray-100'
             />
           </div>
           <div className='flex justify-start items-start flex-wrap h-[90%] p-4'>
@@ -92,7 +92,7 @@ export const OpenedPlanFolder = forwardRef(
                     width={100}
                     className={`${
                       document.title === clickedPortfolio &&
-                      'border bg-gray-500 bg-opacity-50 rounded-md'
+                      'border bg-gray-500/50 rounded-md'
                     }`}
                     onClick={(e) => onClickHandler(e, document.title)}
                     onDoubleClick={() => router.push(document.link)}
