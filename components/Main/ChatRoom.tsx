@@ -2,8 +2,7 @@ import React, { ForwardedRef, forwardRef, useEffect, useRef } from 'react';
 import { Buttons } from '@components/UI/Buttons';
 import Image from 'next/image';
 import profile from '../../public/images/profile2.png';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { atomOnClickChatRoom } from '@/reocil/OnClickChatRoom/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 interface ButtonsProps {
   onClickClose?: any;
@@ -12,7 +11,8 @@ interface ButtonsProps {
 export const ChatRoom = forwardRef((props: ButtonsProps, ref: ForwardedRef<any>) => {
   ChatRoom.displayName = 'ChatRoom';
 
-  const [onClickChatRoom, setOnClickChatRoom] = useRecoilState(atomOnClickChatRoom);
+  const onClickChatRoom = usePortfolioStore((s) => s.onClickChatRoom);
+  const setOnClickChatRoom = usePortfolioStore((s) => s.setOnClickChatRoom);
 
   return (
     <div

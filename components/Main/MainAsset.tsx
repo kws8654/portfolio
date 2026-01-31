@@ -1,8 +1,7 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useRecoilState } from 'recoil';
-import { atomClickedPortfolio } from '@/reocil/ClickedPortfolio/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 import { cva } from 'class-variance-authority';
 
 const ABSOLUTE_POSITION = [
@@ -54,7 +53,8 @@ export const MainAsset = forwardRef((props: MainAssetProps, ref: ForwardedRef<an
   MainAsset.displayName = 'MainAsset';
   const { type, index, title, link, openFolder } = props;
   const router = useRouter();
-  const [clickedPortfolio, setClickedPortfolio] = useRecoilState(atomClickedPortfolio);
+  const clickedPortfolio = usePortfolioStore((s) => s.clickedPortfolio);
+  const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
 
   const onClickHandler = (event: any) => {
     event.stopPropagation();

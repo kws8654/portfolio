@@ -12,14 +12,14 @@ import {
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
-import { useRecoilState } from 'recoil';
-import { atomOnClickGallery } from '@/reocil/OnClickGallery/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 export const Gallery = forwardRef((_: object, ref: ForwardedRef<any>) => {
   Gallery.displayName = 'Gallery';
 
   const [images, setImages] = useState(null);
-  const [onClickGallery, setOnClickGallery] = useRecoilState(atomOnClickGallery);
+  const onClickGallery = usePortfolioStore((s) => s.onClickGallery);
+  const setOnClickGallery = usePortfolioStore((s) => s.setOnClickGallery);
 
   useEffect(() => {
     async function fetchFeed() {

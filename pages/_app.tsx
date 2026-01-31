@@ -9,7 +9,6 @@ import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { RecoilRoot } from 'recoil';
 config.autoAddCss = false;
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -33,9 +32,7 @@ export default function App({ Component, pageProps: { ...pageProps } }: AppProps
         <title>Wonsub Kim_Portfolio</title>
         <link rel='icon' href='/favicon.png' />
       </Head>
-      <RecoilRoot>
-        <Component {...pageProps} />
-      </RecoilRoot>
+      <Component {...pageProps} />
     </>
   );
 }

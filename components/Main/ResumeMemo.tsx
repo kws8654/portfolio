@@ -43,7 +43,7 @@ export const ResumeMemo = forwardRef((_: object, ref: ForwardedRef<any>) => {
           <br />
           ✔️ JavaScript(~ES7) / TypeScript / HTML5 / JavaScript API
           <br />
-          ✔️ React.js / Next.js / Recoil / React-Query
+          ✔️ React.js / Next.js / Zustand / React-Query
           <br />
           ✔️ Mapbox GL / React Map GL / MapLibre GL / Turf.js
           <br />

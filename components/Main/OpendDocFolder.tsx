@@ -11,8 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import portfolioFile from '@public/images/pf1.png';
 import Image from 'next/image';
-import { useRecoilState } from 'recoil';
-import { atomClickedPortfolio } from '@/reocil/ClickedPortfolio/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 import { Documents } from '@/constants/common';
 import { useRouter } from 'next/router';
 
@@ -24,7 +23,8 @@ interface OpenedDocFolderProps {
 export const OpenedDocFolder = forwardRef((props: OpenedDocFolderProps, ref: ForwardedRef<any>) => {
   OpenedDocFolder.displayName = 'OpenedDocFolder';
   const { onClickDocFolder, setOnClickDocFolder } = props;
-  const [clickedPortfolio, setClickedPortfolio] = useRecoilState(atomClickedPortfolio);
+  const clickedPortfolio = usePortfolioStore((s) => s.clickedPortfolio);
+  const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
   const router = useRouter();
 
   const onClickHandler = (event: any, title: string) => {

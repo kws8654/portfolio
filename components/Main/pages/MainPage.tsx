@@ -1,11 +1,10 @@
 import React, { createRef, RefObject, useEffect, useRef, useState } from 'react';
-import { useSetRecoilState } from 'recoil';
 import { MacLayout } from '@components/UI/MacLayout';
 import { Portfolio } from '@components/Main/Portfolio';
 import { Folder } from '@components/Main/Folder';
 import { ResumeMemo } from '@components/Main/ResumeMemo';
 import { FaceTimeVideo } from '@components/Main/FaceTimeVideo';
-import { atomClickedPortfolio } from '@/reocil/ClickedPortfolio/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 import { Notification } from '@components/Main/Notification';
 import { OpenedFolder } from '@components/Main/OpenedFolder';
 import { MusicPlayer } from '@components/Main/MusicPlayer';
@@ -22,7 +21,7 @@ import macBookBackgroundImage from '../../../public/images/macbook-background.jp
 export const MainPage = () => {
   const containerRef = useRef(null);
   const [componentRefs] = useState(() => Array.from({ length: 20 }, () => createRef<any>()));
-  const setClickedPortfolio = useSetRecoilState(atomClickedPortfolio);
+  const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
   const [onClickFolder, setOnClickFolder] = useState(false);
   const [onClickDocFolder, setOnClickDocFolder] = useState(false);
   const [onClickPlanFolder, setOnClickPlanFolder] = useState(false);

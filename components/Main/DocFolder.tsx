@@ -1,8 +1,7 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
 import folder from '@public/images/folder.png';
-import { useRecoilState } from 'recoil';
-import { atomClickedPortfolio } from '@/reocil/ClickedPortfolio/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 interface DetailResumeProps {
   setOnClickDocFolder: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +10,8 @@ interface DetailResumeProps {
 export const DocFolder = forwardRef((props: DetailResumeProps, ref: ForwardedRef<any>) => {
   DocFolder.displayName = 'DocFolder';
   const { setOnClickDocFolder } = props;
-  const [clickedPortfolio, setClickedPortfolio] = useRecoilState(atomClickedPortfolio);
+  const clickedPortfolio = usePortfolioStore((s) => s.clickedPortfolio);
+  const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
 
   const onClickHandler = (event: any) => {
     event.stopPropagation();

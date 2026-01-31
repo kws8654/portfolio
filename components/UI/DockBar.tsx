@@ -11,13 +11,11 @@ import notion from '../../public/images/notion.png';
 import slack from '../../public/images/slack.png';
 import git from '../../public/images/git.png';
 import Link from 'next/link';
-import { useSetRecoilState } from 'recoil';
-import { atomOnClickGallery } from '@/reocil/OnClickGallery/atom';
-import { atomOnClickChatRoom } from '@/reocil/OnClickChatRoom/atom';
+import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 export const DockBar = () => {
-  const setOnClickGallery = useSetRecoilState(atomOnClickGallery);
-  const setOnClickChatRoom = useSetRecoilState(atomOnClickChatRoom);
+  const setOnClickGallery = usePortfolioStore((s) => s.setOnClickGallery);
+  const setOnClickChatRoom = usePortfolioStore((s) => s.setOnClickChatRoom);
 
   return (
     <>
