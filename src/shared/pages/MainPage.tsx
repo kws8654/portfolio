@@ -9,7 +9,6 @@ import { Notification } from '@widgets/desktop/Notification';
 import { OpenedFolder } from '@widgets/desktop/OpenedFolder';
 import { MusicPlayer } from '@widgets/desktop/MusicPlayer';
 import { NOTIFICATIONS, DESKTOP_ITEMS } from '@shared/constants/common';
-import { ChatRoom } from '@widgets/desktop/ChatRoom';
 import { FileAsset } from '@widgets/desktop/FileAsset';
 import { useDraggable } from '@shared/lib/useDraggable';
 import Image from 'next/image';
@@ -27,7 +26,6 @@ export const MainPage = () => {
   const musicRef = useRef<HTMLDivElement | null>(null);
   const resumeRef = useRef<HTMLDivElement | null>(null);
   const openedFolderRef = useRef<HTMLDivElement | null>(null);
-  const chatRoomRef = useRef<HTMLDivElement | null>(null);
 
   const draggableItems = useMemo(
     () => [
@@ -36,7 +34,6 @@ export const MainPage = () => {
       { id: 'music', ref: musicRef },
       { id: 'resume', ref: resumeRef },
       { id: 'openedFolder', ref: openedFolderRef },
-      { id: 'chatRoom', ref: chatRoomRef },
     ],
     [fileRefs],
   );
@@ -76,7 +73,6 @@ export const MainPage = () => {
           onClickFolder={onClickFolder}
           setOnClickFolder={setOnClickFolder}
         />
-        <ChatRoom ref={chatRoomRef} />
         <div className='absolute top-[40px] right-[10px] flex flex-col gap-[10px] md:hidden'>
           {NOTIFICATIONS.map((notification) => (
             <Notification
