@@ -14,8 +14,8 @@ export const HomePage = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const onClickApple = () => {
-    setSceneNumber((prev: number) => prev + 1);
-    setTimeout(() => setSceneNumber((prev: number) => prev + 1), 5000);
+    setSceneNumber((prev) => prev + 1);
+    setTimeout(() => setSceneNumber((prev) => prev + 1), 5000);
     audioRef.current?.play();
   };
 
@@ -29,45 +29,49 @@ export const HomePage = () => {
   );
 };
 
-const StartScene = ({ onClickApple }: { onClickApple: () => void }) => {
+type StartSceneProps = {
+  onClickApple: () => void;
+};
+
+const StartScene = ({ onClickApple }: StartSceneProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    if (canvasRef.current) {
-      const scene = new THREE.Scene();
-      const renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current,
-        antialias: true,
-      });
-      renderer.outputEncoding = THREE.sRGBEncoding;
-      const camera = new THREE.PerspectiveCamera(50, 1);
-      camera.position.set(0, 0.18, 0.5);
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(200, 200);
+    if (!canvasRef.current) return;
 
-      const loader = new GLTFLoader();
-      scene.background = new THREE.Color('black');
-      const light = new THREE.DirectionalLight('#868e96', 10);
-      light.position.set(0, 0, 100);
-      scene.add(light);
+    const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current,
+      antialias: true,
+    });
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    const camera = new THREE.PerspectiveCamera(50, 1);
+    camera.position.set(0, 0.18, 0.5);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(200, 200);
 
-      loader.load('/assets/models/apple/scene.gltf', (object) => {
-        scene.add(object.scene);
+    const loader = new GLTFLoader();
+    scene.background = new THREE.Color('black');
+    const light = new THREE.DirectionalLight('#868e96', 10);
+    light.position.set(0, 0, 100);
+    scene.add(light);
 
-        function animate() {
-          requestAnimationFrame(animate);
-          object.scene.rotation.y -= 0.02;
-          renderer.render(scene, camera);
-        }
-        animate();
-      });
-    }
-  }, [canvasRef]);
+    loader.load('/assets/models/apple/scene.gltf', (object) => {
+      scene.add(object.scene);
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        object.scene.rotation.y -= 0.02;
+        renderer.render(scene, camera);
+      };
+      animate();
+    });
+  }, []);
 
   return (
     <section className='w-full h-screen flex flex-col justify-center items-center bg-black'>
       <canvas
-        onClick={() => onClickApple()}
+        onClick={onClickApple}
         ref={canvasRef}
         className='cursor-pointer transform rotate-180 hover:scale-125 transition'
       ></canvas>
@@ -83,9 +87,9 @@ const LoadingScene = () => {
   return (
     <section className='flex justify-center items-center w-full h-screen bg-neutral-900'>
       <div className='flex flex-col justify-center items-center gap-[60px] w-[1400px] h-[800px] border border-gray-500 rounded-lg bg-black overflow-hidden styles-transition'>
-        <Image src={appleLogo} alt={'appleLogo'} width={100} height={100} />
+        <Image src={appleLogo} alt='appleLogo' width={100} height={100} />
         <div className='flex items-center w-[450px] h-[10px] border border-white rounded-lg overflow-hidden'>
-          <div className='styles-loading-bar'>{/*Loading-Bar*/}</div>
+          <div className='styles-loading-bar' />
         </div>
       </div>
     </section>
@@ -103,13 +107,13 @@ const LogInScene = () => {
   return (
     <MacLayout>
       <div className='flex flex-col justify-center items-center h-full'>
-        <Image src={profileImage} alt={'profileImage'} width={180} height={180} />
+        <Image src={profileImage} alt='profileImage' width={180} height={180} />
         <p className='styles-text-xl text-center text-white'>Guest 19</p>
         <form onSubmit={pushToMain}>
           <input
             type='password'
             className='rounded-2xl mt-4 mb-2 p-1 w-[200px] styles-text-xs bg-white'
-            placeholder={' 암호 입력'}
+            placeholder=' 암호 입력'
           />
         </form>
         <p className='styles-text-sm text-center text-gray-500'>Type any letters</p>
