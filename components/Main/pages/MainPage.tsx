@@ -1,36 +1,48 @@
-import React, { createRef, RefObject, useEffect, useRef, useState } from 'react';
+import React, { createRef, RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import { MacLayout } from '@components/UI/MacLayout';
-import { Portfolio } from '@components/Main/Portfolio';
-import { Folder } from '@components/Main/Folder';
 import { ResumeMemo } from '@components/Main/ResumeMemo';
 import { FaceTimeVideo } from '@components/Main/FaceTimeVideo';
 import { usePortfolioStore } from '@/store/usePortfolioStore';
 import { Notification } from '@components/Main/Notification';
 import { OpenedFolder } from '@components/Main/OpenedFolder';
 import { MusicPlayer } from '@components/Main/MusicPlayer';
-import { NOTIFICATIONS, MAIN_ASSETS } from '@/constants/common';
-import { Gallery } from '@components/Main/Gallery';
+import { NOTIFICATIONS, DESKTOP_ITEMS } from '@/constants/common';
 import { ChatRoom } from '@components/Main/ChatRoom';
-import { DocFolder } from '@components/Main/DocFolder';
-import { OpenedDocFolder } from '@components/Main/OpendDocFolder';
-import { OpenedPlanFolder } from '@components/Main/OpenedPlanFolder';
-import { MainAsset } from '@components/Main/MainAsset';
+import { FileAsset } from '@components/Main/FileAsset';
 import Image from 'next/image';
-import macBookBackgroundImage from '../../../public/images/macbook-background.jpeg';
+import macBookBackgroundImage from '../../../public/assets/images/macbook-background.jpeg';
 
 export const MainPage = () => {
   const containerRef = useRef(null);
-  const [componentRefs] = useState(() => Array.from({ length: 20 }, () => createRef<any>()));
   const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
   const [onClickFolder, setOnClickFolder] = useState(false);
-  const [onClickDocFolder, setOnClickDocFolder] = useState(false);
-  const [onClickPlanFolder, setOnClickPlanFolder] = useState(false);
+
+  const fileRefs = useRef(
+    Object.fromEntries(DESKTOP_ITEMS.map((item) => [item.id, createRef<any>()])),
+  ).current;
+  const faceTimeRef = useRef(null);
+  const musicRef = useRef(null);
+  const resumeRef = useRef(null);
+  const openedFolderRef = useRef(null);
+  const chatRoomRef = useRef(null);
+
+  const draggableRefs = useMemo(
+    () => [
+      ...Object.values(fileRefs),
+      faceTimeRef,
+      musicRef,
+      resumeRef,
+      openedFolderRef,
+      chatRoomRef,
+    ],
+    [fileRefs],
+  );
 
   useEffect(() => {
     const { width: containerWidth, height: containerHeight } =
       containerRef.current.getBoundingClientRect();
 
-    componentRefs.forEach((componentRef: RefObject<any>) => {
+    draggableRefs.forEach((componentRef: RefObject<any>) => {
       if (!componentRef.current) return;
 
       const { width: boxWidth, height: boxHeight } = componentRef.current.getBoundingClientRect();
@@ -71,7 +83,7 @@ export const MainPage = () => {
         }
       });
     });
-  }, [containerRef, componentRefs]);
+  }, [containerRef, draggableRefs]);
 
   return (
     <MacLayout ref={containerRef}>
@@ -81,54 +93,32 @@ export const MainPage = () => {
       >
         <Image src={macBookBackgroundImage} alt='macBookBackgroundImage' fill={true} />
         <div className='grid grid-cols-2 gap-[20px] w-[250px]'>
-          {MAIN_ASSETS.map(
-            (asset: { type: string; title: string; link: string }, index: number) => {
-              let folderSetter = null;
+          {DESKTOP_ITEMS.map((asset) => {
+            const isFolder = asset.kind === 'folder';
+            const openFolder = isFolder ? setOnClickFolder : undefined;
 
-              if (asset.type === 'folder') {
-                if (index === 7) {
-                  folderSetter = setOnClickDocFolder;
-                } else if (index === 8) {
-                  folderSetter = setOnClickPlanFolder;
-                } else {
-                  folderSetter = setOnClickFolder;
-                }
-              }
-
-              return (
-                <MainAsset
-                  key={index}
-                  index={index}
-                  ref={componentRefs[index]}
-                  type={asset.type}
-                  title={asset.title}
-                  link={asset.link}
-                  openFolder={folderSetter}
-                />
-              );
-            },
-          )}
+            return (
+              <FileAsset
+                key={asset.id}
+                ref={fileRefs[asset.id]}
+                kind={asset.kind}
+                title={asset.title}
+                link={asset.link}
+                position={asset.position}
+                openFolder={openFolder}
+              />
+            );
+          })}
         </div>
-        <FaceTimeVideo ref={componentRefs[MAIN_ASSETS.length + 1]} />
-        <MusicPlayer ref={componentRefs[MAIN_ASSETS.length + 2]} />
-        <ResumeMemo ref={componentRefs[MAIN_ASSETS.length + 3]} />
-        <OpenedDocFolder
-          ref={componentRefs[MAIN_ASSETS.length + 4]}
-          onClickDocFolder={onClickDocFolder}
-          setOnClickDocFolder={setOnClickDocFolder}
-        />
-        <OpenedPlanFolder
-          ref={componentRefs[MAIN_ASSETS.length + 5]}
-          onClickPlanDocFolder={onClickPlanFolder}
-          setOnClickPlanDocFolder={setOnClickPlanFolder}
-        />
+        <FaceTimeVideo ref={faceTimeRef} />
+        <MusicPlayer ref={musicRef} />
+        <ResumeMemo ref={resumeRef} />
         <OpenedFolder
-          ref={componentRefs[MAIN_ASSETS.length + 6]}
+          ref={openedFolderRef}
           onClickFolder={onClickFolder}
           setOnClickFolder={setOnClickFolder}
         />
-        {/*<Gallery ref={componentRefs[MAIN_ASSETS.length + 5]} />*/}
-        <ChatRoom ref={componentRefs[MAIN_ASSETS.length + 7]} />
+        <ChatRoom ref={chatRoomRef} />
         <div className='absolute top-[40px] right-[10px] flex flex-col gap-[10px] md:hidden'>
           {NOTIFICATIONS.map((notification: { title: string; message: string }, index: number) => {
             return (

@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef, useEffect, useRef } from 'react';
 import { Buttons } from '@components/UI/Buttons';
 import Image from 'next/image';
-import profile from '../../public/images/profile2.png';
+import profile from '../../public/assets/images/profile2.png';
 import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 interface ButtonsProps {

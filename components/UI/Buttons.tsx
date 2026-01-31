@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 import Image from 'next/image';
-import closeButton from '../../public/images/close-button.png';
-import minimizeButton from '../../public/images/minimize-button.png';
-import maximizeButton from '../../public/images/maximize-button.png';
+import closeButton from '../../public/assets/images/close-button.png';
+import minimizeButton from '../../public/assets/images/minimize-button.png';
+import maximizeButton from '../../public/assets/images/maximize-button.png';
 
 interface ButtonsProps {
   onClickClose?: any;

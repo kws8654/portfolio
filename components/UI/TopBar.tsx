@@ -1,18 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
-import appleUdLogo from '../../public/images/apple-ud-logo.png';
-import kakaoTalk from '../../public/images/kakaotalk.png';
-import network from '../../public/images/internet.png';
-import battery from '../../public/images/battery.png';
-import wifi from '../../public/images/wifi.png';
-import magnifier from '../../public/images/magnifier.png';
-import toggle from '../../public/images/toggle.png';
+import appleUdLogo from '../../public/assets/images/apple-ud-logo.png';
+import kakaoTalk from '../../public/assets/images/kakaotalk.png';
+import network from '../../public/assets/images/internet.png';
+import battery from '../../public/assets/images/battery.png';
+import wifi from '../../public/assets/images/wifi.png';
+import magnifier from '../../public/assets/images/magnifier.png';
+import toggle from '../../public/assets/images/toggle.png';
 import { LiveTime } from '@components/UI/LiveTime';
 
 export const TopBar = () => {
   return (
     <>
-      <section className='flex justify-between p-2 h-[26px] styles-bar-gradient border-b md:hidden'>
+      <section className='flex justify-between p-2 h-[26px] styles-bar-gradient border-b border-gray-300 md:hidden'>
         <div className='flex items-center gap-[5px] styles-text-sm'>
           <Image src={appleUdLogo} alt={'appleUdLogo'} width={25} />
           <p className='mx-2 font-semibold'>Wonsub's Portfolio</p>

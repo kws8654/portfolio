@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { Buttons } from '@components/UI/Buttons';
 import Image from 'next/image';
-import facetimeButtons from '../../public/images/facetime-buttons.png';
+import facetimeButtons from '../../public/assets/images/facetime-buttons.png';
 
 export const FaceTimeVideo = forwardRef((_: object, ref: ForwardedRef<any>) => {
   FaceTimeVideo.displayName = 'FaceTimeVideo';
@@ -21,7 +21,7 @@ export const FaceTimeVideo = forwardRef((_: object, ref: ForwardedRef<any>) => {
           className='styles-x-center top-0'
         />
       </div>
-      <video className='px-8 bg-black' src='./videos/facetime.webm' autoPlay muted loop />
+      <video className='px-8 bg-black' src='/assets/video/facetime.webm' autoPlay muted loop />
     </section>
   );
 });

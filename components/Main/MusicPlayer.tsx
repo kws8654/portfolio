@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
-import cover from '@public/images/4walls.webp';
-import dolbyLogo from '@public/images/dolby-logo.png';
+import cover from '@public/assets/images/4walls.webp';
+import dolbyLogo from '@public/assets/images/dolby-logo.png';
 import { Buttons } from '@components/UI/Buttons';
 
 export const MusicPlayer = forwardRef((_: object, ref: ForwardedRef<any>) => {
@@ -21,7 +21,7 @@ export const MusicPlayer = forwardRef((_: object, ref: ForwardedRef<any>) => {
         <span className='font-semibold mr-0.5'>Dolby</span>Atmos
       </div>
       <audio controls>
-        <source src='./audios/audio.mp3' />
+        <source src='/assets/audio/audio.mp3' />
       </audio>
       <div className='text-center pb-3 bg-gray-100'>
         <p className='styles-text-lg font-semibold'>4walls</p>

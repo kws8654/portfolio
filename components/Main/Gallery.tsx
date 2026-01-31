@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 import Image from 'next/image';
-import folder from '@public/images/folder.png';
+import folder from '@public/assets/images/folder.png';
 import { Buttons } from '@components/UI/Buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { NotionRenderer } from 'react-notion-x';
 import { ExtendedRecordMap } from 'notion-types';
 import Image from 'next/image';
-import profile from '../../public/images/profile2.png';
+import profile from '../../public/assets/images/profile2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleRight,

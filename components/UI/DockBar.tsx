@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import chrome from '../../public/images/chrome.png';
-import discord from '../../public/images/discord.png';
-import eclipse from '../../public/images/eclipse.png';
-import music from '../../public/images/music.png';
-import vsc from '../../public/images/vsc.png';
-import docker from '../../public/images/docker.png';
-import terminal from '../../public/images/terminal.png';
-import notion from '../../public/images/notion.png';
-import slack from '../../public/images/slack.png';
-import git from '../../public/images/git.png';
+import chrome from '../../public/assets/images/chrome.png';
+import discord from '../../public/assets/images/discord.png';
+import eclipse from '../../public/assets/images/eclipse.png';
+import music from '../../public/assets/images/music.png';
+import vsc from '../../public/assets/images/vsc.png';
+import docker from '../../public/assets/images/docker.png';
+import terminal from '../../public/assets/images/terminal.png';
+import notion from '../../public/assets/images/notion.png';
+import slack from '../../public/assets/images/slack.png';
+import git from '../../public/assets/images/git.png';
 import Link from 'next/link';
 import { usePortfolioStore } from '@/store/usePortfolioStore';
 

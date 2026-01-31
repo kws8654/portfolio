@@ -4,8 +4,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { MacLayout } from '@components/UI/MacLayout';
 import Image from 'next/image';
-import appleLogo from '../../../public/images/apple-logo.png';
-import profileImage from '../../../public/images/profile2.png';
+import appleLogo from '../../../public/assets/images/apple-logo.png';
+import profileImage from '../../../public/assets/images/profile2.png';
 
 export const HomePage = () => {
   const [sceneNumber, setSceneNumber] = useState(1);
@@ -22,7 +22,7 @@ export const HomePage = () => {
       {sceneNumber === 1 && <StartScene onClickApple={onClickApple} />}
       {sceneNumber === 2 && <LoadingScene />}
       {sceneNumber === 3 && <LogInScene />}
-      <audio src='./audios/start-sound.mp3' ref={audioRef} />
+      <audio src='/assets/audio/start-sound.mp3' ref={audioRef} />
     </>
   );
 };
@@ -49,7 +49,7 @@ const StartScene = ({ onClickApple }: any) => {
       light.position.set(0, 0, 100);
       scene.add(light);
 
-      loader.load('/scene.gltf', (object) => {
+      loader.load('/assets/models/apple/scene.gltf', (object) => {
         scene.add(object.scene);
 
         function animate() {

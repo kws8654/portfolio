@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
-import folder from '@public/images/folder.png';
+import folder from '@public/assets/images/folder.png';
 import { usePortfolioStore } from '@/store/usePortfolioStore';
 
 interface FolderProps {

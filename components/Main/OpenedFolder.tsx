@@ -41,7 +41,7 @@ export const OpenedFolder = forwardRef((props: OpenedFolderProps, ref: Forwarded
       light.position.set(0, 0, 100);
       scene.add(light);
 
-      loader.load('/3d/scene.gltf', (object) => {
+      loader.load('/assets/models/folder/scene.gltf', (object) => {
         scene.add(object.scene);
 
         function animate() {

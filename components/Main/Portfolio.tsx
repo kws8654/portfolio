@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import Image from 'next/image';
-import porfoliFile from '@public/images/pf1.png';
+import porfoliFile from '@public/assets/images/pf1.png';
 import { useRouter } from 'next/router';
 import { usePortfolioStore } from '@/store/usePortfolioStore';
 import { cva } from 'class-variance-authority';

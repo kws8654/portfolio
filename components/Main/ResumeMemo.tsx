@@ -27,33 +27,35 @@ export const ResumeMemo = forwardRef((_: object, ref: ForwardedRef<any>) => {
         <br />
         <br />
         <p>
-          Hanyang University _ Architecture (2013.03 - 2013.07)
+          Sangmyung University_Scenography (2015.03 - 2021.02)
           <br />
-          Sangmyung University _ Scenography (2015.03 - 2021.02)
+          Hanyang University_Architecture (2013.03 - 2013.07)
         </p>
         <br />
         <p>
-          Fleetune _ Frontend Engineer (2022.10 - 2024.02)
+          MVL(easi6)_Frontend Engineer (2024.08 - Present)
           <br />
-          Team Tiger _ Frontend Engineer (2021.03 - 2022.06)
+          Fleetune_Frontend Engineer (2022.10 - 2024.02)
         </p>
         <br />
         <p>
-          ✔️ HTML / CSS / Sass / Less / Styled-Components / Tailwind
+          - TypeScript, React.js, Next.js
           <br />
-          ✔️ JavaScript(~ES7) / TypeScript / HTML5 / JavaScript API
+          - Tailwind CSS, Styled-components
           <br />
-          ✔️ React.js / Next.js / Zustand / React-Query
+          - React-Query, Zustand, Recoil
           <br />
-          ✔️ Mapbox GL / React Map GL / MapLibre GL / Turf.js
+          - Viem, Ethers, Wagmi, Privy
           <br />
-          ✔️ Git (Github, Bitbucket, Gitlab)
+          - Mapbox GL
+          <br />
+          - Git, Github Actions, n8n
+          <br />
         </p>
         <br />
         <p>
           ✅ TOEIC 905 <br />
-          ✅ TOEIC SPEAKING Lv.6 <br />
-          ✅ OPIC IH <br />✅ 정보처리기사
+          ✅ OPIC IH <br />
         </p>
       </div>
     </section>
