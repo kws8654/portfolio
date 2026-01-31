@@ -6,7 +6,9 @@ import cover from '@public/assets/images/4walls.webp';
 import dolbyLogo from '@public/assets/images/dolby-logo.png';
 import { Buttons } from '@shared/ui/Buttons';
 
-export const MusicPlayer = forwardRef((_: object, ref: ForwardedRef<any>) => {
+type MusicPlayerProps = Record<string, never>;
+
+export const MusicPlayer = forwardRef<HTMLDivElement, MusicPlayerProps>((_, ref) => {
   MusicPlayer.displayName = 'MusicPlayer';
 
   return (

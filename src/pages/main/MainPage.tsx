@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createRef, RefObject, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createRef, useMemo, useRef, useState } from 'react';
 import { MacLayout } from '@shared/ui/MacLayout';
 import { ResumeMemo } from '@widgets/desktop/ResumeMemo';
 import { FaceTimeVideo } from '@widgets/desktop/FaceTimeVideo';
@@ -11,81 +11,37 @@ import { MusicPlayer } from '@widgets/desktop/MusicPlayer';
 import { NOTIFICATIONS, DESKTOP_ITEMS } from '@shared/constants/common';
 import { ChatRoom } from '@widgets/desktop/ChatRoom';
 import { FileAsset } from '@widgets/desktop/FileAsset';
+import { useDraggable } from '@shared/lib/useDraggable';
 import Image from 'next/image';
 import macBookBackgroundImage from '@public/assets/images/macbook-background.jpeg';
 
 export const MainPage = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
   const [onClickFolder, setOnClickFolder] = useState(false);
 
   const fileRefs = useRef(
-    Object.fromEntries(DESKTOP_ITEMS.map((item) => [item.id, createRef<any>()])),
+    Object.fromEntries(DESKTOP_ITEMS.map((item) => [item.id, createRef<HTMLDivElement>()])),
   ).current;
-  const faceTimeRef = useRef(null);
-  const musicRef = useRef(null);
-  const resumeRef = useRef(null);
-  const openedFolderRef = useRef(null);
-  const chatRoomRef = useRef(null);
+  const faceTimeRef = useRef<HTMLDivElement | null>(null);
+  const musicRef = useRef<HTMLDivElement | null>(null);
+  const resumeRef = useRef<HTMLDivElement | null>(null);
+  const openedFolderRef = useRef<HTMLDivElement | null>(null);
+  const chatRoomRef = useRef<HTMLDivElement | null>(null);
 
-  const draggableRefs = useMemo(
+  const draggableItems = useMemo(
     () => [
-      ...Object.values(fileRefs),
-      faceTimeRef,
-      musicRef,
-      resumeRef,
-      openedFolderRef,
-      chatRoomRef,
+      ...Object.entries(fileRefs).map(([id, ref]) => ({ id, ref })),
+      { id: 'faceTime', ref: faceTimeRef },
+      { id: 'music', ref: musicRef },
+      { id: 'resume', ref: resumeRef },
+      { id: 'openedFolder', ref: openedFolderRef },
+      { id: 'chatRoom', ref: chatRoomRef },
     ],
     [fileRefs],
   );
 
-  useEffect(() => {
-    const { width: containerWidth, height: containerHeight } =
-      containerRef.current.getBoundingClientRect();
-
-    draggableRefs.forEach((componentRef: RefObject<any>) => {
-      if (!componentRef.current) return;
-
-      const { width: boxWidth, height: boxHeight } = componentRef.current.getBoundingClientRect();
-
-      let isDragging: boolean = null;
-      let originLeft: number = null;
-      let originTop: number = null;
-      let originX: number = null;
-      let originY: number = null;
-
-      componentRef.current.addEventListener('mousedown', (e: MouseEvent) => {
-        e.preventDefault();
-        isDragging = true;
-        originX = e.clientX;
-        originY = e.clientY;
-        originLeft = componentRef.current.offsetLeft;
-        originTop = componentRef.current.offsetTop;
-      });
-
-      document.addEventListener('mouseup', (e: MouseEvent) => {
-        isDragging = false;
-      });
-
-      document.addEventListener('mousemove', (e: MouseEvent) => {
-        if (isDragging) {
-          const diffX = e.clientX - originX;
-          const diffY = e.clientY - originY;
-          const endOfXPoint = containerWidth - boxWidth;
-          const endOfYPoint = containerHeight - boxHeight;
-          componentRef.current.style.left = `${Math.min(
-            Math.max(0, originLeft + diffX),
-            endOfXPoint,
-          )}px`;
-          componentRef.current.style.top = `${Math.min(
-            Math.max(0, originTop + diffY),
-            endOfYPoint,
-          )}px`;
-        }
-      });
-    });
-  }, [containerRef, draggableRefs]);
+  useDraggable(containerRef, draggableItems);
 
   return (
     <MacLayout ref={containerRef}>
@@ -97,7 +53,7 @@ export const MainPage = () => {
         <div className='grid grid-cols-2 gap-[20px] w-[250px]'>
           {DESKTOP_ITEMS.map((asset) => {
             const isFolder = asset.kind === 'folder';
-            const openFolder = isFolder ? setOnClickFolder : undefined;
+            const onOpenFolder = isFolder ? () => setOnClickFolder(true) : undefined;
 
             return (
               <FileAsset
@@ -107,7 +63,7 @@ export const MainPage = () => {
                 title={asset.title}
                 link={asset.link}
                 position={asset.position}
-                openFolder={openFolder}
+                onOpenFolder={onOpenFolder}
               />
             );
           })}
@@ -122,11 +78,13 @@ export const MainPage = () => {
         />
         <ChatRoom ref={chatRoomRef} />
         <div className='absolute top-[40px] right-[10px] flex flex-col gap-[10px] md:hidden'>
-          {NOTIFICATIONS.map((notification: { title: string; message: string }, index: number) => {
-            return (
-              <Notification key={index} title={notification.title} message={notification.message} />
-            );
-          })}
+          {NOTIFICATIONS.map((notification) => (
+            <Notification
+              key={`${notification.title}-${notification.message}`}
+              title={notification.title}
+              message={notification.message}
+            />
+          ))}
         </div>
       </section>
     </MacLayout>

@@ -6,21 +6,22 @@ import Image from 'next/image';
 import profile from '@public/assets/images/profile2.png';
 import { usePortfolioStore } from '@shared/store/usePortfolioStore';
 
-interface ButtonsProps {
-  onClickClose?: any;
-}
+type ChatRoomProps = Record<string, never>;
 
-export const ChatRoom = forwardRef((props: ButtonsProps, ref: ForwardedRef<any>) => {
+export const ChatRoom = forwardRef<HTMLDivElement, ChatRoomProps>((_, ref) => {
   ChatRoom.displayName = 'ChatRoom';
 
   const onClickChatRoom = usePortfolioStore((s) => s.onClickChatRoom);
   const setOnClickChatRoom = usePortfolioStore((s) => s.setOnClickChatRoom);
 
+  if (!onClickChatRoom) {
+    return null;
+  }
+
   return (
     <div
       ref={ref}
-      className={`absolute bottom-[250px] flex-col w-[340px] h-[500px] bg-sky-100 rounded-md overflow-hidden
-      ${onClickChatRoom ? 'flex' : 'hidden'}`}
+      className='absolute bottom-[250px] flex w-[340px] h-[500px] flex-col bg-sky-100 rounded-md overflow-hidden'
     >
       <Buttons onClickClose={setOnClickChatRoom} />
       <div className='flex py-1 mt-4 border-b h-[12%]'>

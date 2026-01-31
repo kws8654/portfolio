@@ -14,10 +14,19 @@ import {
 import dayjs from 'dayjs';
 import { usePortfolioStore } from '@shared/store/usePortfolioStore';
 
-export const Gallery = forwardRef((_: object, ref: ForwardedRef<any>) => {
+type GalleryImage = {
+  id: string;
+  media_url: string;
+  media_type?: string;
+  caption?: string;
+};
+
+type GalleryProps = Record<string, never>;
+
+export const Gallery = forwardRef<HTMLDivElement, GalleryProps>((_, ref) => {
   Gallery.displayName = 'Gallery';
 
-  const [images, setImages] = useState(null);
+  const [images, setImages] = useState<GalleryImage[] | null>(null);
   const onClickGallery = usePortfolioStore((s) => s.onClickGallery);
   const setOnClickGallery = usePortfolioStore((s) => s.setOnClickGallery);
 
@@ -27,17 +36,20 @@ export const Gallery = forwardRef((_: object, ref: ForwardedRef<any>) => {
       const data = await fetch(url);
       const feed = await data.json();
 
-      setImages(feed.data);
+      setImages(feed.data as GalleryImage[]);
     }
 
     void fetchFeed();
   }, []);
 
+  if (!onClickGallery) {
+    return null;
+  }
+
   return (
     <div
       ref={ref}
-      className={`absolute top-[80px] left-[150px] w-[1120px] h-[715px] border border-gray-300 rounded-lg bg-neutral-100 styles-text-xs overflow-hidden hover:z-40
-      ${onClickGallery ? 'flex' : 'hidden'}`}
+      className='absolute top-[80px] left-[150px] flex h-[715px] w-[1120px] rounded-lg border border-gray-300 bg-neutral-100 styles-text-xs overflow-hidden hover:z-40'
     >
       <div className='flex flex-col w-1/4 p-2 border-r border-gray-200'>
         <Buttons ref={ref} onClickClose={setOnClickGallery} />
@@ -90,7 +102,7 @@ export const Gallery = forwardRef((_: object, ref: ForwardedRef<any>) => {
           </p>
           <div className='my-2 grid grid-cols-4 gap-[10px]'>
             {images &&
-              images.map((image: any, index: number) => {
+              images.map((image, index) => {
                 if (index >= 18) return <></>;
                 return (
                   <div

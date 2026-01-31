@@ -5,7 +5,9 @@ import { Buttons } from '@shared/ui/Buttons';
 import Image from 'next/image';
 import facetimeButtons from '@public/assets/images/facetime-buttons.png';
 
-export const FaceTimeVideo = forwardRef((_: object, ref: ForwardedRef<any>) => {
+type FaceTimeVideoProps = Record<string, never>;
+
+export const FaceTimeVideo = forwardRef<HTMLDivElement, FaceTimeVideoProps>((_, ref) => {
   FaceTimeVideo.displayName = 'FaceTimeVideo';
 
   return (

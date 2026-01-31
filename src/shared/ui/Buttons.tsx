@@ -7,10 +7,10 @@ import minimizeButton from '@public/assets/images/minimize-button.png';
 import maximizeButton from '@public/assets/images/maximize-button.png';
 
 interface ButtonsProps {
-  onClickClose?: any;
+  onClickClose?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Buttons = forwardRef((props: ButtonsProps, ref: any) => {
+export const Buttons = forwardRef<HTMLDivElement, ButtonsProps>((props, ref) => {
   Buttons.displayName = 'Buttons';
   const { onClickClose } = props;
 

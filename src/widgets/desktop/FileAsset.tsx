@@ -8,10 +8,10 @@ import { cva } from 'class-variance-authority';
 
 interface FileAssetProps {
   kind: 'file' | 'folder';
-  position: { top: string; left: string };
+  position: { top: number; left: number };
   title: string;
   link?: string | null;
-  openFolder?: React.Dispatch<React.SetStateAction<boolean>>;
+  onOpenFolder?: () => void;
 }
 
 const containerClass = cva('absolute flex flex-col items-center cursor-pointer');
@@ -38,28 +38,27 @@ const labelClass = cva('px-1 styles-text-sm text-white', {
   },
 });
 
-export const FileAsset = forwardRef((props: FileAssetProps, ref: ForwardedRef<any>) => {
+export const FileAsset = forwardRef<HTMLDivElement, FileAssetProps>((props, ref) => {
   FileAsset.displayName = 'FileAsset';
-  const { kind, position, title, link, openFolder } = props;
+  const { kind, position, title, link, onOpenFolder } = props;
   const router = useRouter();
   const clickedPortfolio = usePortfolioStore((s) => s.clickedPortfolio);
   const setClickedPortfolio = usePortfolioStore((s) => s.setClickedPortfolio);
   const isFolder = kind === 'folder';
 
-  const onClickHandler = (event: any) => {
+  const onClickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     setClickedPortfolio(title);
   };
 
   const onDoubleClickHandler = () => {
     if (isFolder) {
-      openFolder?.(true);
+      onOpenFolder?.();
       return;
     }
 
-    if (link) {
-      router.push(link);
-    }
+    if (!link) return;
+    router.push(link);
   };
 
   return (

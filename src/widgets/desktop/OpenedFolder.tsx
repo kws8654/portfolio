@@ -19,13 +19,14 @@ interface OpenedFolderProps {
   setOnClickFolder: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const OpenedFolder = forwardRef((props: OpenedFolderProps, ref: ForwardedRef<any>) => {
+export const OpenedFolder = forwardRef<HTMLDivElement, OpenedFolderProps>((props, ref) => {
   OpenedFolder.displayName = 'OpenedFolder';
   const { onClickFolder, setOnClickFolder } = props;
   const folderCanvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    if (folderCanvasRef.current) {
+    if (!onClickFolder || !folderCanvasRef.current) return;
+
       const scene = new THREE.Scene();
       const renderer = new THREE.WebGLRenderer({
         canvas: folderCanvasRef.current,
@@ -53,15 +54,16 @@ export const OpenedFolder = forwardRef((props: OpenedFolderProps, ref: Forwarded
         }
         animate();
       });
-    }
-  }, [folderCanvasRef]);
+  }, [folderCanvasRef, onClickFolder]);
+
+  if (!onClickFolder) {
+    return null;
+  }
 
   return (
     <div
       ref={ref}
-      className={`absolute top-[260px] left-[290px] w-[720px] h-[415px] border border-gray-300 rounded-lg bg-neutral-100 styles-text-xs overflow-hidden hover:z-40 ${
-        onClickFolder ? 'flex' : 'hidden'
-      }`}
+      className='absolute top-[260px] left-[290px] flex h-[415px] w-[720px] rounded-lg border border-gray-300 bg-neutral-100 styles-text-xs overflow-hidden hover:z-40'
     >
       <div className='flex flex-col w-1/4 p-2 border-r border-gray-200'>
         <Buttons onClickClose={setOnClickFolder} ref={ref} />

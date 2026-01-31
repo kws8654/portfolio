@@ -11,12 +11,12 @@ import profileImage from '@public/assets/images/profile2.png';
 
 export const HomePage = () => {
   const [sceneNumber, setSceneNumber] = useState(1);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const onClickApple = () => {
     setSceneNumber((prev: number) => prev + 1);
     setTimeout(() => setSceneNumber((prev: number) => prev + 1), 5000);
-    audioRef.current.play();
+    audioRef.current?.play();
   };
 
   return (
@@ -29,7 +29,7 @@ export const HomePage = () => {
   );
 };
 
-const StartScene = ({ onClickApple }: any) => {
+const StartScene = ({ onClickApple }: { onClickApple: () => void }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const LoadingScene = () => {
 const LogInScene = () => {
   const router = useRouter();
 
-  const pushToMain = (event: any) => {
+  const pushToMain = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     router.push('/main');
   };

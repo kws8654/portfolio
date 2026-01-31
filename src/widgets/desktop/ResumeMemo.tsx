@@ -3,7 +3,9 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { Buttons } from '@shared/ui/Buttons';
 
-export const ResumeMemo = forwardRef((_: object, ref: ForwardedRef<any>) => {
+type ResumeMemoProps = Record<string, never>;
+
+export const ResumeMemo = forwardRef<HTMLDivElement, ResumeMemoProps>((_, ref) => {
   ResumeMemo.displayName = 'ResumeMemo';
 
   return (

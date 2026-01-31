@@ -9,9 +9,9 @@ interface MacLayoutProps {
   children?: React.ReactNode;
 }
 
-export const MacLayout = forwardRef((prop?: MacLayoutProps, ref?: ForwardedRef<any>) => {
+export const MacLayout = forwardRef<HTMLDivElement, MacLayoutProps>((props, ref) => {
   MacLayout.displayName = 'MacLayout';
-  const { children } = prop;
+  const { children } = props;
   const pathname = usePathname();
 
   return (
