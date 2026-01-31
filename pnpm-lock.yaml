@@ -32,6 +32,9 @@ importers:
       dayjs:
         specifier: ^1.11.9
         version: 1.11.19
+      katex:
+        specifier: ^0.16.28
+        version: 0.16.28
       next:
         specifier: latest
         version: 16.1.6(@babel/core@7.28.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1827,6 +1830,10 @@ packages:
 
   katex@0.15.6:
     resolution: {integrity: sha512-UpzJy4yrnqnhXvRPhjEuLA4lcPn6eRngixW7Q3TJErjg3Aw2PuLFBzTkdUb89UtumxjhHTqL3a5GDGETMSwgJA==}
+    hasBin: true
+
+  katex@0.16.28:
+    resolution: {integrity: sha512-YHzO7721WbmAL6Ov1uzN/l5mY5WWWhJBSW+jq4tkfZfsxmo1hu6frS0EOswvjBUnWE6NtjEs48SFn5CQESRLZg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -4620,6 +4627,10 @@ snapshots:
       object.values: 1.2.1
 
   katex@0.15.6:
+    dependencies:
+      commander: 8.3.0
+
+  katex@0.16.28:
     dependencies:
       commander: 8.3.0
 
