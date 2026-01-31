@@ -4,7 +4,7 @@
     "module": "ESNext", // import 문법, 'commonjs', 'amd', 'es2015', 'esnext'
     "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
     "checkJs": true, // 일반 js 파일에서도 에러체크 여부
-    "jsx": "preserve", // tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
+    "jsx": "react-jsx", // tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
     "declaration": true, // 컴파일시 .d.ts 파일 자동 생성 (현재 사용하는 모든 타입이 정의된 파일)
     "noUnusedLocals": false, // 사용하지 않는 지역변수 에러 체크
     "noUnusedParameters": false, // 사용하지 않는 파라미터 에러 체크
@@ -35,7 +35,7 @@
     "isolatedModules": true,
     "downlevelIteration": true,
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "lib": [
       "dom",
       "dom.iterable",
@@ -45,32 +45,29 @@
       "@/*": [
         "./*"
       ],
+      "@app/*": [
+        "app/*"
+      ],
       "@pages/*": [
         "pages/*"
       ],
-      "@server/*": [
-        "server/*"
+      "@widgets/*": [
+        "widgets/*"
+      ],
+      "@features/*": [
+        "features/*"
+      ],
+      "@entities/*": [
+        "entities/*"
+      ],
+      "@shared/*": [
+        "shared/*"
       ],
       "@public/*": [
-        "public/*"
+        "../public/*"
       ],
       "@styles/*": [
-        "styles/*"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@lib/*": [
-        "lib/*"
-      ],
-      "@utils/*": [
-        "utils/*"
-      ],
-      "@services/*": [
-        "services/*"
-      ],
-      "@hooks/*": [
-        "hooks/*"
+        "../styles/*"
       ]
     },
     "plugins": [
@@ -87,7 +84,8 @@
     "**/*.tsx",
     "index.d.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     ".next",

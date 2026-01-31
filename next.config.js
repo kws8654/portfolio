@@ -2,9 +2,8 @@
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
-  eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  turbopack: {},
   webpack: (config, { isServer }) => {
     config.resolve.fallback = {
       ...(config.resolve.fallback || {}),
