@@ -38,6 +38,9 @@ importers:
       notion-client:
         specifier: ^6.16.0
         version: 6.16.0
+      prismjs:
+        specifier: ^1.30.0
+        version: 1.30.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
