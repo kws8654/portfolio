@@ -55,3 +55,7 @@ logs
 *.sublime-workspace
 node_modules
 .next
+
+# AI
+CLAUDE.md
+AGENTS.md
